@@ -28,7 +28,7 @@ alias lscommands='cat ~/.zshrc | grep alias'
 alias bat='batcat'
 alias ll='ls -Al --group-directories-first --si --color=auto'
 alias ls='ls --color=auto --group-directories-first'
-
+alias androidsec="cd $HOME/Projects/androidsec && ls"
 alias starpreset="$HOME/.config/starship/preset-manager.sh"
 
 export PATH="$HOME/Android/Sdk/build-tools/35.0.1:$PATH"
