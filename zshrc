@@ -1,16 +1,36 @@
 # Created by newuser for 5.9
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$( $HOME/miniconda3/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export  CONDA_CHANGEPS1=false
+
 pathifier() {
-    . /home/android/.config/scripts/pathifier.sh
+    . $HOME/.config/scripts/pathifier.sh
 }
 
 eval "$(starship init zsh)"
 
 alias lscommands='cat ~/.zshrc | grep alias'
 
+alias bat='batcat'
 alias ll='ls -Al --group-directories-first --si --color=auto'
 alias ls='ls --color=auto --group-directories-first'
 
 alias starpreset="$HOME/.config/starship/preset-manager.sh"
 
-export PATH="/home/android/Android/Sdk/platform-tools:$PATH"
-export PATH="/home/android/Android/Sdk/build-tools/35.0.1:$PATH"
+export PATH="$HOME/Android/Sdk/build-tools/35.0.1:$PATH"
+export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+export PATH="$HOME/tools/apktool:$PATH"
