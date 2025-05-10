@@ -1,11 +1,14 @@
 import json
 import sys
-import os
+
 from pathlib import Path
+from os.path import expandvars
 
 class SettingsManager:
     _instance = None
     _settings = None
+    vault_path = None
+    schema_dir_path = None
 
     def __new__(cls):
         if cls._instance is None:
@@ -24,6 +27,10 @@ class SettingsManager:
         with open(settings_path, 'r', encoding='utf-8') as f:
             cls._settings = json.load(f)
 
+        cls.vault_path = expandvars(cls._settings['global']['vault_path'])
+        cls.schema_dir_path = expandvars(cls._settings['database']['schema_dir'])
+    
+
     @classmethod
     def get_global_settings(cls):
         return cls._settings['global']
@@ -32,13 +39,4 @@ class SettingsManager:
     def get_database_settings(cls):
         return cls._settings['database']
 
-    @classmethod
-    def get_vault_path(cls):
-        return cls._settings['global']['vault_path']
-
-    @classmethod
-    def get_schema_dir(cls):
-        return cls._settings['database']['schema_dir']
-
-settings = SettingsManager()
- 
+settings = SettingsManager() 

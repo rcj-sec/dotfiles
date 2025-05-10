@@ -1,14 +1,14 @@
 -- Commands Table
 CREATE TABLE commands (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    command TEXT NOT NULL,
+    tool TEXT NOT NULL,
     description TEXT
 );
 
 -- Tags Table
 CREATE TABLE tags (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    tag TEXT NOT NULL
+    tag TEXT NOT NULL UNIQUE
 );
 
 -- Junction Table (Many-to-Many relationship between commands and tags)

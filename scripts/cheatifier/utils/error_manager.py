@@ -5,6 +5,7 @@ def file_exists(path: Path, msg='Error: file not found > '):
     try:
         if not path.exists():
             raise FileNotFoundError(f'{msg}{path}')
+        return True
     except FileNotFoundError as e:
         print(e)
-        sys.exit(1)
+        return False

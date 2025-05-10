@@ -1,6 +1,7 @@
 import argparse
 
 from actions import create
+from actions import add
 
 def get_parser():
     parser = argparse.ArgumentParser(
@@ -18,6 +19,7 @@ def get_parser():
 
     subparsers['add'] = sps.add_parser('add', help='Add entry to cheatsheet')
     subparsers['add'].add_argument('cheatsheet', help='Name of the cheatsheet')
+    subparsers['add'].set_defaults(func=add.run)
 
 
     return parser
