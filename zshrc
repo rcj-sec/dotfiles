@@ -31,6 +31,7 @@ eval "$(starship init zsh)"
 alias lscommands='cat ~/.zshrc | grep alias'
 
 alias ..="cd .."
+alias downloads="cd $HOME/Downloads"
 alias bat='batcat'
 alias ll='ls -Al --group-directories-first --si --color=auto'
 alias ls='ls --color=auto --group-directories-first'
