@@ -2,6 +2,7 @@
 CREATE TABLE commands (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     tool TEXT NOT NULL,
+    arguments TEXT,
     description TEXT
 );
 
@@ -18,13 +19,4 @@ CREATE TABLE command_tags (
     FOREIGN KEY (command_id) REFERENCES commands(id),
     FOREIGN KEY (tag_id) REFERENCES tags(id),
     PRIMARY KEY (command_id, tag_id)
-);
-
--- Arguments Table (Storing command arguments in a flexible way)
-CREATE TABLE arguments (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    command_id INTEGER,
-    argument TEXT NOT NULL,
-    position INTEGER NOT NULL,
-    FOREIGN KEY (command_id) REFERENCES commands(id)
 );

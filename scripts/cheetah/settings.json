@@ -3,6 +3,6 @@
         "vault_path": "$HOME/cheatsheets"
     },
     "database": {
-        "schema_dir": "$HOME/scripts/cheatifier/schemas"
+        "schema_dir": "$HOME/scripts/cheetah/schemas"
     }
 }

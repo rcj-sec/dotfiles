@@ -18,7 +18,7 @@ class SettingsManager:
     
     @classmethod
     def _load(cls):
-        settings_path = Path.home() / 'scripts' / 'cheatifier' / 'settings.json'
+        settings_path = Path('settings.json')
 
         if not settings_path.exists():
             print(f'Error: settings.json not found at > {settings_path}')
