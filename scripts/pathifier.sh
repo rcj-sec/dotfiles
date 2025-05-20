@@ -20,16 +20,16 @@ case "$1" in
     add)
         if [[ ":$PATH:" != *":$absolute_path:"* ]]; then
             echo "Adding $absolute_path to PATH"
-            echo "export PATH=\"$shell_safe_path:\$PATH\"" >> "$SHELL_RC"
-            export PATH="$absolute_path:$PATH"
+            echo "export PATH=\"\$PATH:$shell_safe_path\"" >> "$SHELL_RC"
+            export PATH="$PATH:$absolute_path"
         else
-            echo "$clean_path already in PATH"
+            echo "$absolute_path already in PATH"
         fi
     ;;
 
     remove)
-        export PATH=$(echo "$PATH" | awk -v RS=: -v ORS=: '$0 != "'"$absolute_path"'"' | sed 's/:$//')
-        sed -i "\|export PATH=\"$shell_safe_path:\\\$PATH\"|d" "$SHELL_RC"
+        export PATH=$(echo "$PATH" | sed -E "s;(:|^)${absolute_path}(:|$);:;g" | sed -E 's;^:;;' | sed -E 's;:$; ;')
+        sed -i "/^export PATH=\"\$PATH:${shell_safe_path//\//\\/}\"$/d" $SHELL_RC
         echo "Removed $absolute_path from PATH"
     ;;
 

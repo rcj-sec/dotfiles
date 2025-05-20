@@ -1,0 +1,2 @@
+require("meow")
+print("hello")

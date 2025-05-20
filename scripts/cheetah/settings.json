@@ -1,8 +1,0 @@
-{
-    "global": {
-        "vault_path": "$HOME/cheatsheets"
-    },
-    "database": {
-        "schema_dir": "$HOME/scripts/cheetah/schemas"
-    }
-}
