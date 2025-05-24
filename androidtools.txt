@@ -1,0 +1,6 @@
+android-studio
+apktool
+dex2jar
+gephi-0.10.1
+jadx
+jd-gui
