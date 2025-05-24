@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/external", // path to fmt
+                "${workspaceFolder}/**" // all project headers
+            ],
+            "defines": [
+                "FMT_HEADER_ONLY" // required macro
+            ],
+            "compilerPath": "/usr/bin/clang++", // or g++ if you use that
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "linux-clang-x64" // or "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
