@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Manage the PATH variable with ease
+# Automatically updates profile file (only bashrc or zshrc)
+
 # Detect shell rc file
 SHELL_RC="$HOME/.bashrc"
 [[ $SHELL =~ zsh ]] && SHELL_RC="${ZDOTDIR:-$HOME}/.zshrc"
@@ -34,10 +37,13 @@ case "$1" in
     ;;
 
     help|*)
+        echo -e "\nManage the PATH variable. Updates the environment vairable and the profile file."
+        echo
         echo "Usage:"
         echo "  pathifier list                 # Show current PATH"
         echo "  pathifier add                  # Add current path"
         echo "  pathifier add /your/path       # Add a path"
         echo "  pathifier remove /your/path    # Remove a path"
+        echo
     ;;
 esac

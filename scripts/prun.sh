@@ -1,13 +1,17 @@
 #!/bin/bash
 
+# Build, Run, and Clean CMake projects
+
 set -e
 
 usage() {
+    echo -e "\nBuild, run, and clean CMake projects."
     echo -e "\nUsage:"
     echo "    prun clean                 # Clean project"
     echo "    prun b <executable_name>   # Build only"
     echo "    prun r <executable_name>   # Run only"
     echo "    prun <executable_name>     # Build and run"
+    echo -e "\nExpected to be run from the project's root dir."
     echo
     exit 1
 }

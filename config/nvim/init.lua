@@ -1,2 +1,5 @@
-require("meow")
-print("hello")
+require("config.lazy")
+require("config.editor")
+require("config.theme")
+require("config.keybinds")
+vim.api.nvim_set_option("clipboard", "unnamed")
