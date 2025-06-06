@@ -9,6 +9,7 @@ return {
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.google_java_format,
 				null_ls.builtins.formatting.prettierd,
+                null_ls.builtins.formatting.shfmt,
 				{
 					method = null_ls.methods.FORMATTING,
 					filetypes = { "zig" },

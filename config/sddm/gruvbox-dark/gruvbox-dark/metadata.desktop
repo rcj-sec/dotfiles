@@ -1,0 +1,6 @@
+[SddmGreeterTheme]
+Name=Gruvbox dark
+Description=Gruvbox dark theme for SDDM
+Type=sddm-theme
+MainScript=Main.qml
+ConfigFile=theme.conf

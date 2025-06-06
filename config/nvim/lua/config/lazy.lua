@@ -8,8 +8,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
                 { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
                 { out, "WarningMsg" },
                 { "\nPress any key to exit..." },
-            }, 
-            true, 
+            },
+            true,
             {}
         )
         vim.fn.getchar()
@@ -27,4 +27,7 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
+
+-- Add Mason bin directory to runtime PATH for null-ls and other plugins
+vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath("data") .. "/mason/bin"
 

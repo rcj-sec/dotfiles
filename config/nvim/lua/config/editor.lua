@@ -26,3 +26,6 @@ vim.api.nvim_create_autocmd(
         end,
     }
 )
+
+vim.filetype.add({ extension = { rasi = "rasi" } })
+

@@ -1,0 +1,81 @@
+{
+  "layer": "top",
+
+  "margin-top": 5,
+  "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "spacing": 0,
+
+  "mode": "dock",
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "hyprland/language",
+    "custom/firewall",
+    "custom/network",
+    "custom/battery",
+    "custom/lock",
+    "custom/shutdown",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "empty": "",
+      "active": "",
+    },
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4],
+    },
+  },
+
+  "hyprland/language": {
+    "format-en": "  US",
+    "format-es": "  ES",
+    "on-click": "hyprctl switchxkblayout all next",
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A %d %b %Y}",
+  },
+
+  "custom/firewall": {
+    "exec": "$HOME/.config/waybar/modules/firewall/display.sh",
+    "interval": "once",
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/modules/firewall/cycle.sh",
+    "tooltip": false,
+  },
+
+  "custom/network": {
+    "exec": "$HOME/.config/waybar/modules/network/status.sh",
+    "interval": 5,
+    "tooltip-format": "Refresh",
+    "on-click": "$HOME/.config/waybar/modules/network/refresh.sh",
+  },
+
+  "custom/battery": {
+    "exec": "$HOME/.config/waybar/modules/battery/display.sh",
+    "interval": 180,
+    "tooltip": false,
+  },
+
+  "custom/lock": {
+    "format": "󰌾",
+    "interval": "once",
+    "on-click": "hyprlock",
+    "tooltip": false,
+  },
+
+  "custom/shutdown": {
+    "format": "",
+    "interval": "once",
+    "on-click": "systemctl poweroff",
+    "tooltip": false,
+  },
+}

@@ -10,7 +10,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "zls" }
+                ensure_installed = { "lua_ls", "zls", "clangd", "bashls" }
             })
         end,
     },
@@ -19,6 +19,8 @@ return {
         config = function()
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("zls")
+            vim.lsp.enable("clangd")
+            vim.lsp.enable("bashls")
             vim.diagnostic.config({
                   virtual_text = true, -- enable inline errors
                   signs = false,
