@@ -26,8 +26,9 @@ Item {
       }
       background: Rectangle {
         id: sessionEntryBackground
-        color: config.orange2
-        radius: 3
+        color: config.background
+        border.color: config.accent
+        radius: 15
       }
       states: [
         State {
@@ -35,7 +36,7 @@ Item {
           when: sessionEntry.hovered
           PropertyChanges {
             target: sessionEntryBackground
-            color: config.orange1
+            color: config.accent
           }
         }
       ]
@@ -56,21 +57,32 @@ Item {
   }
   Button {
     id: sessionButton
-    height: inputHeight
-    width: inputHeight
+    height: 40
+    width: 40
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/settings.svg")
-      height: height
-      width: width
-      color: sessionButton.hovered ? config.orange2 : config.foreground
+      height: 20
+      width: 20
+      color: config.foreground
     }
     background: Rectangle {
-      id: sessionButtonBackground
+      id: sessionButtonBg
       color: config.background
-      opacity: 0
-      radius: 3
+      border.color: config.accent
+      radius: 15
     }
+    states: [
+      State {
+        name: "hovered"
+        when: sessionButton.hovered
+        PropertyChanges {
+          target: sessionButtonBg
+          border.width: 2
+          color: config.accent
+        }
+      }
+    ]
     transitions: Transition {
       PropertyAnimation {
         properties: "color"

@@ -6,19 +6,20 @@ Item {
   implicitWidth: rebootButton.width
   Button {
     id: rebootButton
-    height: inputHeight
-    width: inputHeight
+    height: 40
+    width: 40
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/reboot.svg")
-      height: height
-      width: width
-      color: config.background
+      height: 20
+      width: 20
+      color: config.foreground
     }
     background: Rectangle {
       id: rebootButtonBackground
-      radius: 3
-      color: config.lgreen1
+      radius: 15
+      color: config.background
+      border.color: config.accent
     }
     states: [
       State {
@@ -26,7 +27,8 @@ Item {
         when: rebootButton.hovered
         PropertyChanges {
           target: rebootButtonBackground
-          color: config.lgreen2
+          border.width: 2
+          color: config.accent
         }
       }
     ]

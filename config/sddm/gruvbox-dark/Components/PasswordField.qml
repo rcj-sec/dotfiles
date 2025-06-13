@@ -6,11 +6,11 @@ TextField {
   focus: true
   selectByMouse: true
   placeholderText: "passwd"
-  placeholderTextColor: config.orange2
+  placeholderTextColor: config.accent
   echoMode: TextInput.Password
   passwordCharacter: "*"
   passwordMaskDelay: config.PasswordShowLastLetter
-  selectionColor: config.lgreen1
+  selectionColor: config.accent
   renderType: Text.NativeRendering
   font.family: config.Font
   font.pointSize: config.FontSize
@@ -20,7 +20,8 @@ TextField {
   background: Rectangle {
     id: passFieldBackground
     radius: 15
-    color: "transparent"
+    color: config.background
+    border.color: config.accent
   }
   states: [
     State {
@@ -38,7 +39,16 @@ TextField {
     }
   }
   onAccepted: {
-    if (user !== "" && password !== "")
-      sddm.login(user, password, session)
+      if (user !== "" && password !== "") {
+        passFieldBackground.color = config.accent
+        sddm.login(user, password, session)
+      }
+  }
+  Connections {
+    target: sddm
+
+    function onLoginFailed() {
+      passFieldBackground.color = config.background
+    }
   }
 }

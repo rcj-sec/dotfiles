@@ -21,7 +21,8 @@ TextField {
   text: userModel.lastUser
   background: Rectangle {
     id: userFieldBackground
-    color: "transparent"
+    color: config.background
+    border.color: config.accent
     radius: 15
   }
   states: [

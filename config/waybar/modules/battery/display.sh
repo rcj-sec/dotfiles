@@ -31,5 +31,5 @@ done
 if [[ "$charging" == "1" ]]; then
     echo "󱐋$icon $capacity%"
 else
-    echo "$capacity $icon"
+    echo " $icon $capacity%"
 fi

@@ -6,27 +6,29 @@ Item {
   implicitWidth: sleepButton.width
   Button {
     id: sleepButton
-    height: inputHeight
-    width: inputHeight
+    height: 40
+    width: 40
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/sleep.svg")
-      height: height
-      width: width
-      color: config.background
+      height: 20
+      width: 20
+      color: config.foreground
     }
     background: Rectangle {
       id: sleepButtonBg
-      color: config.blue2
-      radius: 3
+      color: config.background
+      border.color: config.accent
+      radius: 15
     }
     states: [
       State {
         name: "hovered"
         when: sleepButton.hovered
         PropertyChanges {
+          border.width: 2
           target: sleepButtonBg
-          color: config.blue1
+          color: config.accent
         }
       }
     ]

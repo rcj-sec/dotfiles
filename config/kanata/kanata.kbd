@@ -1,6 +1,6 @@
-(defsrc            caps      h     j     k     l       rsft    bspc)
+(defsrc            caps      h     j     k     l       rsft    bspc     ;)
 
 (defalias caps (layer-while-held arrows)) 
 
-(deflayer base     @caps     h     j     k     l       rsft    bspc)
-(deflayer arrows   _         left down  up    right   caps    del)
+(deflayer base     @caps     h     j     k     l       rsft    bspc     ;)
+(deflayer arrows   _         left  down  up    right   caps    del      esc)

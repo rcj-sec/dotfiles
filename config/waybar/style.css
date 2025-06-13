@@ -1,40 +1,30 @@
-@import url("colors-gtk.css");
+@import url("colors-min.css");
 
 * {
     font-family: "iMWritingMono Nerd Font";
-    border: none;
-    font-size: 14;
 
 }
 
 window#waybar {
-    color: @foreground;    
-    background: alpha(@background, 0.6);
-    transition: 0.2s ease;
-    border: 1px solid @grey2;
-    border-radius: 10px;
-}
-
-tooltip {
+    color: @foreground; 
     background: @background;
+    transition: 0.2s ease;
+    border: 1px solid alpha(@foreground, 0.4);
     border-radius: 10px;
-}
-
-tooltip label {
-    color: @foreground;
 }
 
 #workspaces {
+    margin-right: 5px;
+    border-radius: 15px;
     background: none;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 15px;
     border: none;
 }
 
 #workspaces button {
     background: none;
-    color: @grey2;
+    color: alpha(@foreground, 0.4);
     box-shadow: none;
     text-shadow: none;
     border-radius: 15px;
@@ -49,60 +39,68 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    color: @orange2;
+    color: @accent;
 }
 
+#custom-updates,
 #language,
+#clock,
+#custom-file-explorer,
+#custom-sound,
 #custom-firewall,
 #custom-network,
 #custom-battery,
+#custom-notifications,
 #custom-lock, 
 #custom-shutdown {
-    margin-right: 15px;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 1px solid @background;
 }
 
+#custom-updates {
+    color: @accent;
+}
+
+#custom-notifications.notification {
+    color: @accent;
+}
+
+#custom-updates:hover,
 #language:hover,
+#clock:hover,
+#custom-file-explorer:hover,
+#custom-sound:hover,
 #custom-firewall:hover,
 #custom-network:hover,
 #custom-battery:hover,
+#custom-notifications:hover,
 #custom-lock:hover, 
 #custom-shutdown:hover {
-    color: @lgreen2;
-    padding-top: 1px;
-    border-bottom: 2px solid @lgreen2;
+    color: @background;
+    background: @foreground;
     transition: all 0.5s ease;
 }
 
-#language,
-#custom-battery,
-#custom-firewall {
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-#custom-network {
-    padding-right: 10px;
-    padding-left: 5px;
+#custom-file-explorer,
+#custom-notifications {
+    margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 17px;
 }
 
 #custom-lock {
-    padding-right: 5px;
-    padding-left: 5px;
-}
-
-#custom-lock:hover {
-    color: @yellow2;
-    border-color: @yellow2;
+    padding-right: 6px;
+    padding-left: 6px;
 }
 
 #custom-shutdown {
-    padding-left: 5px;
+    margin-right: 10px;
     padding-right: 8px;
+    padding-left: 5px;
 }
-
-#custom-shutdown:hover {
-    color: @red2;
-    border-color: @red2;
-}
-
 

@@ -10,13 +10,19 @@
 
   "mode": "dock",
 
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": [
+      "hyprland/workspaces",
+      "custom/updates",
+      "hyprland/language",
+  ],
   "modules-center": ["clock"],
   "modules-right": [
-    "hyprland/language",
+    "custom/file-explorer",
+    "custom/sound",
     "custom/firewall",
     "custom/network",
     "custom/battery",
+    "custom/notifications",
     "custom/lock",
     "custom/shutdown",
   ],
@@ -33,6 +39,15 @@
     },
   },
 
+  "custom/updates": {
+    "exec": "sh $HOME/.config/waybar/modules/updates/exec.sh",
+    "interval": 3600,
+    "signal": 11,
+    "on-click-right": "pkill -SIGRTMIN+11 waybar",
+    "on-click": "sh $HOME/scripts/rofi/updates.sh && pkill -SIGRTMIN+11 waybar",
+    "tooltip": false
+  },
+
   "hyprland/language": {
     "format-en": "  US",
     "format-es": "  ES",
@@ -41,28 +56,68 @@
 
   "clock": {
     "format": "{:%H:%M}",
-    "tooltip-format": "{:%A %d %b %Y}",
+    "format-alt": "{:%A %d %b %Y}",
+    "tooltip": false
+  },
+  
+  "custom/file-explorer": {
+      "format": "",
+      "interval": "once",
+      "on-click": "thunar",
+      "tooltip": false,
+  },
+
+  "custom/sound": {
+      "exec": "$HOME/.config/waybar/modules/sound/exec.sh",
+      "interval": "once",
+      "signal": 12,
+      "tooltip": false,
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -SIGRTMIN+12 waybar",
   },
 
   "custom/firewall": {
-    "exec": "$HOME/.config/waybar/modules/firewall/display.sh",
+    "exec": "$HOME/.config/waybar/modules/firewall/exec.sh",
     "interval": "once",
     "signal": 8,
-    "on-click": "$HOME/.config/waybar/modules/firewall/cycle.sh",
+    "on-click": "sh $HOME/scripts/rofi/firewall.sh",
     "tooltip": false,
   },
 
   "custom/network": {
-    "exec": "$HOME/.config/waybar/modules/network/status.sh",
+    "exec": "$HOME/.config/waybar/modules/network/exec.sh",
     "interval": 5,
-    "tooltip-format": "Refresh",
-    "on-click": "$HOME/.config/waybar/modules/network/refresh.sh",
+    "tooltip": false,
+    "on-click": "sh $HOME/scripts/rofi/wifi.sh",
   },
 
   "custom/battery": {
-    "exec": "$HOME/.config/waybar/modules/battery/display.sh",
+    "format": "{text}",
+    "exec": "$HOME/.config/waybar/modules/battery/exec.sh",
+    "on-click": "sh $HOME/scripts/rofi/battery.sh && pkill -SIGRTMIN+10 waybar",
+    "on-click-right": "$HOME/.config/waybar/modules/battery/on-click-right.sh",
+    "signal": 10,
     "interval": 180,
+    "tooltip": false
+  },
+
+  "custom/notifications": {
     "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "",
+        "none": "",
+        "dnd-notification": "",
+        "dnd-none": "",
+        "inhibited-notification": "",
+        "inhibited-none": ""
+    },
+
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
   },
 
   "custom/lock": {
@@ -75,7 +130,7 @@
   "custom/shutdown": {
     "format": "",
     "interval": "once",
-    "on-click": "systemctl poweroff",
+    "on-click": "sh $HOME/scripts/rofi/session.sh",
     "tooltip": false,
   },
 }

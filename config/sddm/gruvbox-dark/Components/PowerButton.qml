@@ -6,19 +6,20 @@ Item {
   implicitWidth: powerButton.width
   Button {
     id: powerButton
-    height: inputHeight
-    width: inputHeight
+    height: 40
+    width: 40
     hoverEnabled: true
     icon {
       source: Qt.resolvedUrl("../icons/power.svg")
-      height: height
-      width: width
-      color: config.red3
+      height: 20
+      width: 20
+      color: config.foreground
     }
     background: Rectangle {
       id: powerButtonBackground
-      radius: 3
-      color: config.grey2
+      radius: 15
+      color: config.background
+      border.color: config.accent
     }
     states: [
       State {
@@ -26,7 +27,8 @@ Item {
         when: powerButton.hovered
         PropertyChanges {
           target: powerButtonBackground
-          color: config.grey1
+          color: config.accent
+          border.width: 2
         }
       }
     ]
