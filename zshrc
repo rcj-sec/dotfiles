@@ -3,6 +3,8 @@ pathifier() {
 }
 
 tabs -4
+bindkey "^[[3~" delete-char
+bindkey -v
 
 export PICTURES="$HOME/Pictures"
 export DOWNLOADS="$HOME/Downloads"
@@ -22,7 +24,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias starpreset="$HOME/.config/starship/preset-manager.sh"
 alias find_java_class="$HOME/scripts/find_java_class.sh"
 alias registracker="python3 $HOME/scripts/registracker.py"
-alias cheetah="python3 $HOME/scripts/cheetah/cheetah.py"
+alias cheetah="python3 $HOME/Projects/cheetah/cheetah.py"
 
 alias jd-gui="java -jar $HOME/tools/android/jd-gui.jar"
 alias apktool="java -jar $HOME/tools/android/apktool.jar"

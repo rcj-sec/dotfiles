@@ -6,6 +6,7 @@ start() {
 }
 
 main() {
+    echo "Entered main"
     rofi_picker="$HOME/scripts/rofi/picker.sh"
 
     ssid_sec=""
@@ -15,35 +16,41 @@ main() {
     nmcli dev wifi rescan
     while IFS=':' read -r ssid signal security; do
 
-        if [[ "$security" != "--" ]]; then 
+        if [[ -n "$security" ]]; then 
+            echo "$ssid is secure"
             ssid_sec+="$ssid\n"
         fi
 
         if [ "$signal" -ge 80 ]; then
-            if [[ "$security" == "--" ]]; then 
+            if [[ -z "$security" ]]; then 
                 icon="󰤨"
+            else
+                icon="󰤪"
             fi
-            icon="󰤪"
         elif [ "$signal" -ge 60 ]; then
-            if [[ "$security" == "--" ]]; then 
+            if [[ -z "$security" ]]; then 
                 icon="󰤥"
+            else
+                icon="󰤧"
             fi
-            icon="󰤧"
         elif [ "$signal" -ge 40 ]; then
-            if [[ "$security" == "--" ]]; then 
+            if [[ -z "$security" ]]; then 
                 icon="󰤢"
+            else
+                icon="󰤤"
             fi
-            icon="󰤤"
         elif [ "$signal" -ge 20 ]; then
-            if [[ "$security" == "--" ]]; then 
+            if [[ -z "$security" ]]; then 
                 icon="󰤟"
+            else
+                icon="󰤡"
             fi
-            icon="󰤡"
         else
-            if [[ "$security" == "--" ]]; then 
+            if [[ -z "$security" ]]; then 
                 icon="󰤯"
+            else
+                icon="󰤬"
             fi
-            icon="󰤬"
         fi
 
         wifi_list+="\n$icon $ssid"
@@ -51,7 +58,8 @@ main() {
 
     echo -e "\n-------------\nssid_sec = \n$ssid_sec"
 
-    choice=$(sh "$rofi_picker" "$wifi_list" | cut -d' ' -f2)
+    rasi_config="$HOME/.config/rofi/wifi-dialog.rasi"
+    choice=$(sh "$rofi_picker" "$wifi_list" --config "$rasi_config"| cut -d' ' -f2)
     
     if [[ -z "$choice" ]]; then
         exit 0
@@ -68,6 +76,8 @@ main() {
         fi
         exit 0
     fi
+
+    echo "$choice"
 
     if nmcli -f NAME con show | grep -e "^$choice$" > /dev/null; then
         if nmcli dev wifi connect "$choice"; then

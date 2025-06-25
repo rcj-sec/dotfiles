@@ -1,7 +1,10 @@
 #!/bin/bash
 
-wifi_status=$(nmcli radio wifi)
-if [[ "$wifi_status" == "enabled" ]]; then
+device_status=$(nmcli -t -f DEVICE,TYPE,STATE device)
+
+interface=$(echo "$device_status" | grep -e "^.*:ethernet:connected$" | awk -F: '{print $1}')
+
+if echo "$device_status" | grep -e "^.*:wifi:connected$" > /dev/null; then
     connected_to=$(nmcli -f ACTIVE,SSID,SIGNAL dev wifi | awk '$1 == "yes"{print}')
     signal=0
     if [[ -n "$connected_to" ]]; then
@@ -21,12 +24,8 @@ if [[ "$wifi_status" == "enabled" ]]; then
         echo "$glyph $ssid"
         exit 0
     fi
-else
-    eth_status=$(nmcli -t -f DEVICE,TYPE,STATE device | grep '^.*:ethernet:connected$')
-    if (( $? == 0)); then
-        interface=$(echo "$eth_status" | awk '{print $1}')
-        echo "󱘖 $interface"
-        exit 0
-    fi
+elif [[ -n "$interface" ]]; then
+    echo "󱘖 $interface"
+    exit 0
 fi
 echo "Not connected"

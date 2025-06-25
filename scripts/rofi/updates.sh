@@ -14,6 +14,7 @@ main() {
     rofi_picker="$HOME/scripts/rofi/picker.sh"
 
     choice=$(sh "$rofi_picker" "$updates" -scroll-method 1| awk '{print $2}')
+    echo "<$choice>"
     if [[ -z "$choice" ]]; then 
         exit 0
     elif [[ "$choice" == "All" ]]; then 
@@ -41,7 +42,9 @@ sudo -K
 
 export SUDO_ASKPASS="$HOME/scripts/rofi/root-prompt.sh"
 
-yay -Sy
+if ! yay -Sy; then 
+    exit 0
+fi
 
 if ! info=$(yay -Qu); then
     notify-send "System up to date!" -i "$icons/ok.svg" -t 2000

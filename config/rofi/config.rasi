@@ -6,7 +6,7 @@ configuration {
 }
 
 * {
-    bg: #2B3335;
+    bg: #222222;
     fg: #FFFFFF;
     accent: #ffffff99;
     background: @bg;
@@ -134,6 +134,7 @@ listview {
 }
 scrollbar {
     handle-width:                10px ;
+    handle-rounded-corners:      true;
     handle-color:                @accent;
     border-radius:               10px;
     background-color:            @bg;

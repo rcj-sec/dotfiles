@@ -13,8 +13,7 @@ choice=$(sh "$picker" "$modes")
 
 case "$choice" in
 "$shutdown")
-	systemctl --user stop waybar
-	systemctl poweroff
+	systemctl poweroff 
 	;;
 "$lock")
     hyprlock
