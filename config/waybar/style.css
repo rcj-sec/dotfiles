@@ -1,80 +1,147 @@
 @import url("colors-min.css");
 
+@define-color background @bg3;
+@define-color foreground @fg1;
+@define-color accent     @accent3;
+
 * {
     font-family: "iMWritingMono Nerd Font";
+    font-weight: bold;
+    min-height: 0;
     padding: 0;
     margin: 0;
-
 }
 
 window#waybar {
     color: @foreground; 
-    background: @background;
+    background: alpha(@background, 1.0);
     transition: 0.2s ease;
-    border-bottom: 1px solid alpha(@foreground, 0.2);
 }
 
 #workspaces {
-    border-radius: 15px;
-    background: none;
-    box-shadow: none;
-    text-shadow: none;
-    border: none;
+    padding: 3px 0px 3px 5px;
 }
 
 #workspaces button {
-    background: none;
-    color: alpha(@foreground, 0.4);
-    padding-right: 5px;
-    box-shadow: none;
+    background: transparent;
+    color: alpha(@accent, 0.4);
     border: 0px;
-    text-shadow: none;
-    border-radius: 15px;
-}
-
-#workspaces button.active {
-    color: @foreground;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #workspaces button.empty {
-    color: @foreground;
+    color: alpha(@foreground, 0.1);
+}
+
+#workspaces button.active {
+    color: @accent;
 }
 
 #workspaces button:hover {
+    color: @accent2;
+    box-shadow: none;
+    text-shadow: none;
+    border: 0px;
+}
+
+#clock.c2 {
+    border-right: 2px solid white;
+    padding-right: 10px;
+}
+
+#clock {
+    margin: 5px 0px 5px 0px;
+    padding-left: 10px;
+}
+
+#language, #network, #power-profiles-daemon, #battery, #bluetooth { 
+    background: alpha(@foreground, 0.2);
+    border-radius: 18px;
+    margin: 5px;
+    padding: 0px 10px 0px 10px;
+}
+
+#language:hover {
+    color: @accent;
+    transition: 0.2s ease;
+}
+
+#bluetooth {
+    min-width: 30px;
+}
+
+#bluetooth.connected {
+    color: lightgreen;
+}
+
+#bluetooth.off, #bluetooth.disabled {
+    color: @background;
+}
+
+#bluetooth:hover {
     color: @accent;
 }
 
-#custom-updates,
-#language,
-#clock,
-#custom-file-explorer,
-#custom-sound,
-#custom-firewall,
-#custom-network,
-#custom-battery,
-#custom-notifications,
-#custom-lock, 
-#custom-shutdown {
-    margin-left: 10px;
-    margin-right: 10px;
-    border: transparent;
+#battery.warning {
+    color: yellow;
 }
 
-#custom-notifications.notification {
+#battery.critical {
+    color: red;
+}
+
+#battery.charging {
+    color: lightgreen;
+}
+
+#pulseaudio {
+    min-width: 50px;
+    border-radius: 18px 0px 0px 18px;
+    margin: 5px 0px 5px 0px;
+    background: alpha(@foreground, 0.2);
+    transition: 0.2s ease;
+}
+
+#pulseaudio.audio {
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#pulseaudio.microphone {
+    min-width: 20px;
+    border-radius: 0px 18px 18px 0;
+    transition: 0.2s ease;
+    margin-right: 5px;
+    padding-right: 10px;
+}
+
+#pulseaudio.audio.muted {
+    color: @background;
+}
+
+
+#pulseaudio.microphone.source-muted {
+    color: @background;
+}
+
+#pulseaudio:hover {
+    color: @accent;
+    transition: 0.2s ease;
+}
+
+#pulseaudio.audio.muted:hover {
     color: @accent;
 }
 
-#custom-updates:hover,
-#language:hover,
-#clock:hover,
-#custom-file-explorer:hover,
-#custom-sound:hover,
-#custom-firewall:hover,
-#custom-network:hover,
-#custom-battery:hover,
-#custom-notifications:hover,
-#custom-lock:hover, 
-#custom-shutdown:hover {
+#pulseaudio.microphone.source-muted:hover {
     color: @accent;
-    transition: all 0.5s ease;
 }
+
+#power-profiles-daemon:hover {
+    color: @accent;
+}
+
+

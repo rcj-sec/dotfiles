@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <image_file>"
+    exit 1
+fi
+
+input_image="$1"
+echo "input_image=$input_image"
+image_name="$(basename "$input_image")"
+echo "image_name=$image_name"
+target_path="$WALLPAPER_DIR/$image_name"
+
+if [[ "$(realpath "$(dirname "$input_image")")" != "$(realpath "$WALLPAPER_DIR")" ]]; then 
+    echo "Image not in Wallpaper directory."
+    if [[ -f "$target_path" ]]; then 
+        echo "File $target_path already exists. Changing name..."
+        base="${image_name%.*}"
+        ext="${image_name##*.}"
+        target_path="$WALLPAPER_DIR/${base}x.${ext}"
+    fi
+    echo "Image name: $target_path"
+    cp "$input_image" "$target_path"
+    echo "Copied to wallpaper directory"
+fi
+
+target_basename="$(basename "$target_path")"
+
+ln -sf "$target_basename" "$WALLPAPER_DIR/wallpaper.png"
+
+echo "Changed symlink"
+systemctl --user restart hyprpaper.service
+

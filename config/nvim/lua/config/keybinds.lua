@@ -6,7 +6,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set({ "n", "i", "v" }, "<M-e>", "<Esc>:Explore<CR>", { noremap = true, silent = true })
 
 -- alt + n = toggle neotree
-vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree toggle right<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree toggle<CR>", { noremap = true, silent = true })
 
 -- alt + s = :w
 vim.keymap.set({ "n", "i", "v" }, "<M-w>", "<Esc>:w<CR>", { noremap = true, silent = true })

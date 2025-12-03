@@ -10,7 +10,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "zls", "clangd", "bashls" }
+                ensure_installed = { "lua_ls", "zls", "clangd", "bashls", "asm_lsp" }
             })
         end,
     },
@@ -23,6 +23,10 @@ return {
                   underline = true,
                   update_in_insert = true,
                   severity_sort = true,
+            })
+            vim.lsp.config("asm-lsp", {
+                cmd = { "asm-lsp" },
+                filetypes = { "asm", "s"},
             })
         end
     }

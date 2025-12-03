@@ -33,6 +33,8 @@ alias vim="nvim"
 alias icat="kitten icat"
 alias wpp="$HOME/scripts/wpp.sh"
 
+alias gxx="/home/reus/opt/cross-compilers/gcc-i686/bin/i686-elf-gcc"
 export PATH="$PATH:$HOME/Android/Sdk/build-tools/35.0.1"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
+export PATH="$PATH:$HOME/dotfiles/scripts"

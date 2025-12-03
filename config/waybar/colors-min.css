@@ -1,4 +1,7 @@
-@define-color background   #2B3335;
-@define-color background   #222222;
-@define-color foreground   #ffffff;
-@define-color accent       #ff449f;
+@define-color bg1          #2B3335;
+@define-color bg2          #222222;
+@define-color bg3          #1D2021;
+@define-color fg1          #ffffff;
+@define-color accent1      #ff449f;
+@define-color accent2      #E6B9C6;
+@define-color accent3      #AD685A;
