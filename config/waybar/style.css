@@ -56,7 +56,7 @@ window#waybar {
     padding-left: 10px;
 }
 
-#language, #network, #power-profiles-daemon, #battery, #bluetooth { 
+#custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth { 
     background: alpha(@foreground, 0.2);
     border-radius: 18px;
     margin: 5px;
@@ -66,6 +66,7 @@ window#waybar {
 #language:hover, 
 #bluetooth:hover, 
 #pulseaudio:hover, 
+#custom-updates:hover,
 #bluetooth.disabled:hover,
 #power-profiles-daemon:hover, 
 #pulseaudio.audio.muted:hover, 

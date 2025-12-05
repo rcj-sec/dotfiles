@@ -3,7 +3,7 @@
 updates=$(checkupdates | wc -l)
 
 if (( updates > 0 )) then 
-    echo "  $updates"
+    echo " $updates"
 else
-    echo "  $updates"
+    echo " 0"
 fi

@@ -3,8 +3,9 @@ pathifier() {
 }
 
 tabs -4
-bindkey "^[[3~" delete-char
+
 bindkey -v
+bindkey -M viins '^?' backward-delete-char
 
 export PICTURES="$HOME/Pictures"
 export DOWNLOADS="$HOME/Downloads"
@@ -13,7 +14,7 @@ export NVIM="$HOME/.config/nvim"
 
 eval "$(starship init zsh)"
 
-alias lscommands='cat ~/.zshrc | grep alias'size
+alias lsalias='cat ~/.zshrc | grep alias'
 
 alias downloads="cd $HOME/Downloads"
 
@@ -31,10 +32,10 @@ alias apktool="java -jar $HOME/tools/android/apktool.jar"
 
 alias vim="nvim"
 alias icat="kitten icat"
-alias wpp="$HOME/scripts/wpp.sh"
 
 alias gxx="/home/reus/opt/cross-compilers/gcc-i686/bin/i686-elf-gcc"
 export PATH="$PATH:$HOME/Android/Sdk/build-tools/35.0.1"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 export PATH="$PATH:$HOME/dotfiles/scripts"
+export PATH="$PATH:$HOME/.local/bin"

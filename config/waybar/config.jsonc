@@ -51,7 +51,15 @@
 
     "clock": {
         "format": "{:%H:%M}",
-        "tooltip": false
+        "tooltip": false,
+    },
+
+    "custom/updates": {
+        "exec": "sh ~/.config/waybar/modules/updates/exec.sh",
+        "interval": 3600,
+        "signal": 8,
+        "on-click": "kitty -e ~/scripts/update-system.sh",
+        "on-right-click": "pkill -RTMIN+8 waybar",
     },
 
     "network": {
