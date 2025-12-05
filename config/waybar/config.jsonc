@@ -18,6 +18,7 @@
 
     "modules-right": [
         "hyprland/language",
+        "custom/updates",
         "network",
         "bluetooth",
         "group/pulse",
@@ -94,8 +95,8 @@
         "format-icons": {
             "default": ["", "", ""]
         }, 
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+", 
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-" 
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1", 
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1" 
     },
 
     "pulseaudio#microphone": {
@@ -130,5 +131,6 @@
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "max-length": 25
-    }
+    },
+
 }

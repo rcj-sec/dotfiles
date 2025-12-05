@@ -1,7 +1,9 @@
 #!/bin/bash
 
-if updates=$(checkupdates | grep -c . | grep -v '^0$'); then 
-    echo " $updates"
+updates=$(checkupdates | wc -l)
+
+if (( updates > 0 )) then 
+    echo "  $updates"
 else
-    echo ""
+    echo "  $updates"
 fi

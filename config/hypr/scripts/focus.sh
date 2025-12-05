@@ -1,19 +1,17 @@
 #!/bin/bash
 # shellcheck shell=bash
 
-animations=$(hyprctl getoption animations:enabled | grep int)
+focus=$(hyprctl getoption general:gaps_out | awk 'NR==1{print $3}')
 
-eval set -- "$animations"
+echo $focus
 
-if (( $2 == 0 )); then
-    echo animations are off
-    hyprctl keyword animations:enabled true
-    hyprctl reload
+
+if (( $focus > 0 )); then
     killall -SIGUSR1 waybar
-else
-    echo animations are on 
     hyprctl keyword general:gaps_out 0
+    hyprctl keyword general:gaps_in  2
     hyprctl keyword decoration:rounding 0
+else
     killall -SIGUSR1 waybar
-    hyprctl keyword animations:enabled false
+    hyprctl reload
 fi

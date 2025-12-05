@@ -47,7 +47,7 @@ window#waybar {
 }
 
 #clock.c2 {
-    border-right: 2px solid white;
+    border-right: 2px solid @foreground;
     padding-right: 10px;
 }
 
@@ -63,7 +63,13 @@ window#waybar {
     padding: 0px 10px 0px 10px;
 }
 
-#language:hover {
+#language:hover, 
+#bluetooth:hover, 
+#pulseaudio:hover, 
+#bluetooth.disabled:hover,
+#power-profiles-daemon:hover, 
+#pulseaudio.audio.muted:hover, 
+#pulseaudio.microphone.source-muted:hover {
     color: @accent;
     transition: 0.2s ease;
 }
@@ -78,10 +84,6 @@ window#waybar {
 
 #bluetooth.off, #bluetooth.disabled {
     color: @background;
-}
-
-#bluetooth:hover {
-    color: @accent;
 }
 
 #battery.warning {
@@ -126,22 +128,4 @@ window#waybar {
 #pulseaudio.microphone.source-muted {
     color: @background;
 }
-
-#pulseaudio:hover {
-    color: @accent;
-    transition: 0.2s ease;
-}
-
-#pulseaudio.audio.muted:hover {
-    color: @accent;
-}
-
-#pulseaudio.microphone.source-muted:hover {
-    color: @accent;
-}
-
-#power-profiles-daemon:hover {
-    color: @accent;
-}
-
 
