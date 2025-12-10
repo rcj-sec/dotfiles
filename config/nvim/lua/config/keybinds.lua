@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 local builtin = require("telescope.builtin")
 
+vim.keymap.set({ "n", "i", "v" }, '<C-f>', '<Esc>')
+
 -- ALT + e = open explorer
 vim.keymap.set({ "n", "i", "v" }, "<M-e>", "<Esc>:Explore<CR>", { noremap = true, silent = true })
 
@@ -22,6 +24,8 @@ vim.keymap.set({ "n" }, "<leader>lg", builtin.live_grep, { noremap = true, silen
 
 -- leader + fmt = format document
 vim.keymap.set({ "n" }, "<leader>fmt", vim.lsp.buf.format, { noremap = true, silent = true })
+
+-- leader + wr = wrap with char
 
 -- shift + k = lsp hover function details in normal mode
 vim.keymap.set({ "n" }, "K", vim.lsp.buf.hover, { noremap = true, silent = true })

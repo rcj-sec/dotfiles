@@ -16,7 +16,7 @@ return {
             tabout = {
                 {open = '"', close = '"'},
                 {open = "'", close = "'"},
-                {open = '`', close = '`'},
+                {open = "`", close = "`"},
                 {open = '(', close = ')'},  -- <<< Add this
                 {open = '[', close = ']'},
                 {open = '{', close = '}'},

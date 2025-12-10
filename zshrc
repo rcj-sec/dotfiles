@@ -10,9 +10,7 @@ bindkey -M viins '^?' backward-delete-char
 export PICTURES="$HOME/Pictures"
 export DOWNLOADS="$HOME/Downloads"
 export RCFILE="$HOME/.zshrc"
-export NVIM="$HOME/.config/nvim"
 
-eval "$(starship init zsh)"
 
 alias lsalias='cat ~/.zshrc | grep alias'
 
@@ -39,3 +37,5 @@ export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 
 export PATH="$PATH:$HOME/dotfiles/scripts"
 export PATH="$PATH:$HOME/.local/bin"
+
+eval "$(starship init zsh)"
