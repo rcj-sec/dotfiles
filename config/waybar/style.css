@@ -1,8 +1,8 @@
 @import url("colors-min.css");
 
-@define-color background @bg3;
+@define-color background @bg2;
 @define-color foreground @fg1;
-@define-color accent     @accent3;
+@define-color accent     @accent4;
 
 * {
     font-family: "iMWritingMono Nerd Font";
@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    color: @accent2;
+    color: @accent;
     box-shadow: none;
     text-shadow: none;
     border: 0px;
@@ -56,13 +56,14 @@ window#waybar {
     padding-left: 10px;
 }
 
-#custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth { 
+#custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth, #mpris { 
     background: alpha(@foreground, 0.2);
     border-radius: 18px;
     margin: 5px;
     padding: 0px 10px 0px 10px;
 }
 
+#mpris:hover,
 #language:hover, 
 #bluetooth:hover, 
 #pulseaudio:hover, 

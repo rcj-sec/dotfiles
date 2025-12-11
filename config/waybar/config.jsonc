@@ -12,12 +12,13 @@
 
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/language"
     ],
 
     "modules-center": ["clock#c2", "clock"],
 
     "modules-right": [
-        "hyprland/language",
+        "mpris",
         "custom/updates",
         "network",
         "bluetooth",
@@ -36,6 +37,24 @@
         "persistent-workspaces": {
             "*": [1, 2, 3, 4, 5, 6],
         },
+    },
+
+    "mpris": {
+        "format": "{player_icon}  {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "dynamic-order": ["title", "artist"],
+        "dynamic-separator": " | ",
+        "title-len": 15,
+        "artist-len": 10,
+        "player-icons": {
+            "default": "",
+            "firefox": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "tooltip-format": "Via {player}"
+        // "ignored-players": ["firefox"]
     },
 
     "hyprland/language": {
