@@ -3,6 +3,63 @@
 @define-color greybg #222222;
 @define-color textfg #FFFFFF;
 
+
+.control-center {
+    background: alpha(@bluebg, 0.8);
+    border: 2px solid @accent;
+    border-radius: 0;
+    margin: 10px 10px 10px 0px;
+}
+
+.control-center-list-placeholder {
+    color: @accent;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.floating-notification {
+    background: pink;
+}
+
+.notification-group {
+    background: transparent;
+}
+
+.notification-group:hover {
+    background: transparent;
+}
+
+.notification-group:focus {
+    border: transparent;
+}
+
+/*close button for notification gorup when group is not focused*/
+.notification-group-close-button {
+    background: transparent;
+}
+
+/*close and collapse notification group buttons*/
+.notification-group-buttons {
+    background: transparent;
+}
+
+/*notification group title*/
+.notification-group-headers {
+    opacity: 0;
+}
+
+/*.notification group header text only*/
+.notification-group-header {
+    background: transparent;
+}
+
+/*notification group header icon only*/
+.notification-group-icon {
+    background: transparent;
+}
+
 /*background of the row the notification is in*/
 /*the notification-background is painted over it*/
 .notification-row {
@@ -17,7 +74,7 @@
 
 /*notification itself*/
 .notification {
-    background: @bluebg;
+    background: alpha(@bluebg, 0.7);
     border: 1px solid @accent;
 }
 
@@ -25,7 +82,101 @@
     background: @bluebg;
 }
 
+/*notification or notification group focused*/
+/*painted over the notification itself*/
+.notification-default-action {
+    background: transparent;
+}
+
+.notification-action {
+    background: pink;
+}
+
+/*container for content inside notification*/
+.notification-content {
+    background: transparent;
+}
+
 /*close button for individual notification*/
 .close-button {
+    background: transparent;
+    border: 2px solid white;
+}
 
+.close-button:hover {
+    border: 2px solid @accent;
+    color: @accent;
+}
+
+/*container for the app icon*/
+.image {
+    background: transparent;
+    margin-right: 20px;
+}
+
+/*actual icon*/
+.icon {
+
+}
+
+.text-box {
+    background: transparent;
+}
+
+.summary {
+    background: transparent;
+}
+
+.time {
+    background: transparent;
+    margin-right: 50px;
+}
+
+.body {
+    background: transparent;
+}
+
+/*no clue*/
+.body-image {
+    background: yellow;
+}
+
+/*all label items*/
+label {
+    background: transparent;
+}
+
+progressbar {
+    background: yellow;
+}
+
+.widget-title {
+    border-bottom: 3px solid @accent;
+    border-radius: 0px;
+}
+
+.widget-title > button {
+    border: 1px solid @accent;
+}
+
+.widget-title > button:hover {
+    background: @bluebg;
+}
+
+.widget-dnd {
+    border-bottom: 3px solid @accent;
+    border-radius: 0px;
+}
+
+.widget-dnd > switch {
+    border: 1px solid @accent;
+}
+
+.widget-dnd > switch:checked {
+    background: alpha(@accent, 0.5);
+}
+
+.widget-dnd > label {
+    background: transparent;
+    font-size: 1.5rem;
 }

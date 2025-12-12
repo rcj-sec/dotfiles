@@ -1,6 +1,6 @@
 @import url("colors-min.css");
 
-@define-color background @bg2;
+@define-color background @bg4;
 @define-color foreground @fg1;
 @define-color accent     @accent4;
 
@@ -56,11 +56,23 @@ window#waybar {
     padding-left: 10px;
 }
 
-#custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth, #mpris { 
+#custom-notification, #custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth, #mpris { 
     background: alpha(@foreground, 0.2);
     border-radius: 18px;
     margin: 5px;
     padding: 0px 10px 0px 10px;
+}
+
+#custom-notification {
+    min-width: 20px;
+}
+
+#custom-notification.notification, #custom-notification.dnd-notification {
+    color: @accent;
+}
+
+#custom-notification.none, #custom-notification.dnd-none {
+    color: @background;
 }
 
 #mpris:hover,
@@ -69,6 +81,7 @@ window#waybar {
 #pulseaudio:hover, 
 #custom-updates:hover,
 #bluetooth.disabled:hover,
+#custom-notification:hover,
 #power-profiles-daemon:hover, 
 #pulseaudio.audio.muted:hover, 
 #pulseaudio.microphone.source-muted:hover {
