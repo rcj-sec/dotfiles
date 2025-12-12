@@ -35,7 +35,7 @@
     },
    "backlight": {
       "label": " ",
-      "device": "intel_backlight"
+      "device": "amdgpu_bl1"
     }
    }
 }

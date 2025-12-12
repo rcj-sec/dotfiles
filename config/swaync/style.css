@@ -1,22 +1,37 @@
 @define-color accent #59E1E3;
 @define-color bluebg #0D0F31;
+@define-color lightbluebg #3D3F5A; 
 @define-color greybg #222222;
 @define-color textfg #FFFFFF;
 
+@define-color base #0d0d0d;
+@define-color subtle_base #1a0f2c;
+
+@define-color primary1 #00ffff;
+@define-color primary2 #ff00ff;
+@define-color primary3 #9d00ff;
+@define-color primary4 #39ff14;
+
+@define-color secondy1 #ff6c00;
+@define-color secondy2 #00f0ff;
+@define-color secondy3 #b3b3b3;
+@define-color secondy4 #fdf800;
+
 
 .control-center {
-    background: alpha(@bluebg, 0.8);
-    border: 2px solid @accent;
-    border-radius: 0;
-    margin: 10px 10px 10px 0px;
+    background: alpha(@base, 0.9);
+    border: 2px solid @primary3;
+    border-radius: 10;
+    margin: 20px;
+    box-shadow: 0px 0px 5px 5px alpha(@primary3, 0.5);
 }
 
 .control-center-list-placeholder {
-    color: @accent;
+    color: @primary4;
 }
 
 .control-center-list {
-    background: transparent;
+    border-radius: 10px;
 }
 
 .floating-notification {
@@ -35,14 +50,14 @@
     border: transparent;
 }
 
-/*close button for notification gorup when group is not focused*/
+/*container close button for notification gorup when group is not focused*/
 .notification-group-close-button {
-    background: transparent;
 }
 
-/*close and collapse notification group buttons*/
+/*container close and collapse notification group buttons*/
 .notification-group-buttons {
-    background: transparent;
+    background: @primary1;
+    color: @primary2;
 }
 
 /*notification group title*/
@@ -74,22 +89,32 @@
 
 /*notification itself*/
 .notification {
-    background: alpha(@bluebg, 0.7);
-    border: 2px solid @accent;
-    border-radius: 0;
-    margin: 5px 0px 0px 0px;
+    background: @subtle_base;
+    border: 1px solid @primary4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary4, 0.5);
 }
 
 .notification:hover {
-    background: @bluebg;
+    box-shadow: 0px 0px 5px 3px alpha(@primary4, 0.5);
 }
 
 .notification.critical {
-    border: 2px solid darkred;
+    border: 1px solid @primary2;
+    box-shadow: 0px 0px 5px 1px alpha(@primary2, 0.5);
+}
+
+.notification.critical:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary2, 0.5);
 }
 
 .notification.low {
-    border: 2px solid yellow;
+    border: 1px solid @secondy4; 
+    box-shadow: 0px 0px 5px 1px alpha(@secondy4, 0.5);
+}
+
+.notification.low:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@secondy4, 0.5);
 }
 
 /*notification or notification group focused*/
@@ -99,7 +124,6 @@
 }
 
 .notification-action:hover {
-    background: @bluebg;
 }
 
 /*container for content inside notification*/
@@ -110,12 +134,12 @@
 /*close button for individual notification*/
 .close-button {
     background: transparent;
-    border: 2px solid white;
+    border: none;
+    color: @secondy3;
 }
 
 .close-button:hover {
-    border: 2px solid @accent;
-    color: @accent;
+    color: white;
 }
 
 /*container for the app icon*/
@@ -158,6 +182,10 @@ label {
 
 progressbar {
     background: yellow;
+}
+
+scrollbar, scrollbar:hover {
+    opacity: 0;
 }
 
 .widget-title {
