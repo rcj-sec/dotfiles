@@ -75,11 +75,21 @@
 /*notification itself*/
 .notification {
     background: alpha(@bluebg, 0.7);
-    border: 1px solid @accent;
+    border: 2px solid @accent;
+    border-radius: 0;
+    margin: 5px 0px 0px 0px;
 }
 
 .notification:hover {
     background: @bluebg;
+}
+
+.notification.critical {
+    border: 2px solid darkred;
+}
+
+.notification.low {
+    border: 2px solid yellow;
 }
 
 /*notification or notification group focused*/
@@ -88,8 +98,8 @@
     background: transparent;
 }
 
-.notification-action {
-    background: pink;
+.notification-action:hover {
+    background: @bluebg;
 }
 
 /*container for content inside notification*/
