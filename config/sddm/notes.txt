@@ -1,2 +1,0 @@
-Gruvbox-theme folder goes under /usr/share/sddm/themes/
-File sddm.conf goes under /etc/

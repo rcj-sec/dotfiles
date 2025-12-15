@@ -1,0 +1,83 @@
+@define-color base #0d0d0d;
+@define-color subtle_base #1a0f2c;
+@define-color subtle_base2 #000B1E;
+
+@define-color primary1 #00ffff;
+@define-color primary2 #ff00ff;
+@define-color primary3 #9d00ff;
+@define-color primary4 #39ff14;
+@define-color primary5 #d1003f;
+
+
+@define-color secondy1 #ff6c00;
+@define-color secondy2 #00f0ff;
+@define-color secondy3 #b3b3b3;
+@define-color secondy4 #fdf800;
+
+
+* {
+    font-family: "Play";
+    font-weight: bold;
+    font-size: 22px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    background: transparent;
+}
+
+window {
+    background: transparent;
+}
+
+#outer-box {
+    background: transparent;
+}
+
+#input {
+    background: @subtle_base; 
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#input > image {
+    padding: 0px 10px 0px 10px;
+}
+
+scrolledwindow {
+    background: transparent;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+#inner-box {
+    padding: 10px;
+}
+
+#entry {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    color: transparent;
+    background: transparent;
+}
+
+
+#entry:selected {
+    border: 1px solid @primary2;
+    box-shadow: 0px 0px 5px 3px alpha(@primary2, 0.5);
+    font-size: 26px;
+    padding-left: 20px;
+}
+
+#text:selected {
+    color: @primary1;
+    font-size: 26px;
+}
