@@ -1,7 +1,7 @@
 [config]
 stylesheet=drun-style.css
-width=500
+width=500px
+height= 400px
 insensitive=true
-lines=10
 no_actions=true
 
