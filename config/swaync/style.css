@@ -257,7 +257,13 @@ scrollbar, scrollbar:hover {
     box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
 }
 
-.widget-volume {
+.widget-volume{
+    color: @primary1;
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-backlight {
     color: @primary1;
     border: 1px solid @primary1;
     box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
@@ -275,14 +281,25 @@ scrollbar, scrollbar:hover {
     box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
 }
 
-.widget-volume > box > label {
+.widget-volume > box > label  {
     color: @secondy4;
     padding-left: 13px;
     font-size: 18px;
 }
 
-.widget-volume > box > scale {
+.widget-backlight label {
+    color: @secondy4;
+    padding-left: 13px;
+    font-size: 18px;
+}
+
+.widget-volume scale {
     padding-left: 4px;
+}
+
+.widget-backlight > box > scale {
+    padding-left: 4px;
+    padding-right: 10px;
 }
 
 highlight {
