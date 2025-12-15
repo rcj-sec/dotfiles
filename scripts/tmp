@@ -23,11 +23,9 @@ fi;
 echo "[+] Setting timer for $arguments"
 echo "[+] Total seconds: $total_seconds"
 
-notify-send "  Timer set: $arguments"
-
 sleep "$total_seconds"
 
-notify-send "  Time is up" "Your timer has finished." -u critical
+notify-send "⏰ Timer done: $arguments" 
 
 if command -v paplay &> /dev/null; then 
     paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga &

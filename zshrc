@@ -2,6 +2,7 @@ pathifier() {
     . $HOME/scripts/pathifier.sh
 }
 
+alias ntf="notify-send hello"
 tabs -4
 
 bindkey -v
