@@ -1,16 +1,16 @@
 #!/bin/bash
 # shellcheck shell=bash
-
-focus=$(hyprctl getoption general:gaps_out | awk 'NR==1{print $3}')
+focus=$(hyprctl getoption general:gaps_in | awk 'NR==1{print $3}')
 
 echo $focus
 
 
-if (( $focus > 0 )); then
-    killall -SIGUSR1 waybar
-    hyprctl keyword general:gaps_out 0
+
+if (( $focus != 2 )); then
+    hyprctl keyword decoration:shadow:enabled false
+    hyprctl keyword general:gaps_out 0,0,0,0
     hyprctl keyword general:gaps_in  2
-    hyprctl keyword decoration:rounding 0
+    killall -SIGUSR1 waybar
 else
     killall -SIGUSR1 waybar
     hyprctl reload

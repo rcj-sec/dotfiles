@@ -1,0 +1,79 @@
+#
+# zephyr.toml - Zephyr default prompt theme
+#
+
+add_newline = false
+
+# A minimal left prompt
+format = """
+$python\
+$directory\
+$line_break\
+$character"""
+
+# move the rest of the prompt to the right
+#right_format = """$status$git_branch${custom.git_status_dirty}$git_status"""
+right_format = """$status$cmd_duration$git_branch${custom.git_status_dirty}$git_status"""
+
+palette="cyberpunk"
+
+[palettes.cyberpunk]
+black  = '#0d0d0d'   # ultra-deep near-black
+blue   = '#3B8BFF'   # sharp neon-blue glow
+cyan   = '#00ffff'   # intense neon-cyan
+green  = '#00ff00'   # bright phosphor-green
+purple = '#ff00ff'   # neon-magenta-violet
+red    = '#d1003f'   # pure alarm-neon red
+white  = '#ffffff'   # cold neon-white
+yellow = '#FDF800'   # bright neon-yellow
+
+[character]
+success_symbol = "[❯](purple)[❯](cyan)"
+error_symbol = "[❯](yellow)[❯](red)"
+vicmd_symbol = "[❮](purple)[❮](cyan)"
+
+[python]
+format = '[(\($virtualenv\) )]($style)'
+style = 'white'
+
+[directory]
+format = '[$read_only]($read_only_style)[$path]($style)'
+style = 'yellow'
+truncation_length = 0
+truncation_symbol = ""
+fish_style_pwd_dir_length = 1
+read_only = "[ro] "
+read_only_style = 'red bold'
+
+# right prompt uses left space padding
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style)'
+style = 'green'
+
+[git_status]
+format = '([\[($all_status$ahead_behind$stashed)\]($style)]($style))'
+style = "cyan"
+stashed = "≡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+deleted = ""
+staged = ""
+modified = ""
+untracked = ""
+
+[custom.git_status_dirty]
+when = 'test -n "$(git status --porcelain 2>/dev/null)"'
+symbol = "•"
+style = "white"
+format="[$symbol]($style)"
+shell = ["sh"]
+
+[cmd_duration]
+format = ' [$duration]($style)'
+
+[line_break]
+disabled = false
+
+[status]
+disabled = false
+symbol = ' ✘'

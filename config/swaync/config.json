@@ -1,41 +1,56 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
+    "$schema": "/etc/xdg/swaync/configSchema.json",
 
-  "positionX": "center",
+    "positionX": "center",
 
-  "control-center-positionX": "right", 
+    "control-center-positionX": "right", 
 
+    "timeout": 3,
+    "timeout-low": 2,
 
-  "widgets": [
- 	"dnd",
- 	"inhibitors",
- 	"volume",
- 	"backlight",
- 	"mpris",
- 	"title",
- 	"notifications"
-  ],
-  "widget-config": {
-    "inhibitors": {
-      "text": "Inhibidores",
-      "button-text": "Clear All",
-      "clear-all-button": true
-    },
-    "title": {
-      "text": "Control Center",
-      "clear-all-button": true,
-      "button-text": "Clear All"
-    },
-    "mpris": {
-      "image-size": 128,
-      "image-radius": 8
-    },
-    "volume": {
-      "label": " "
-    },
-   "backlight": {
-      "label": " ",
-      "device": "amdgpu_bl1"
+    "rules": [
+        {
+            "app_name": "updates",
+            "icon": "", 
+            "actions": {
+                "Update": "notify-send updating"
+            },
+            "body_click_command": "kitty"
+        }
+    ],
+
+    "widgets": [
+    "dnd",
+    "inhibitors",
+    "volume",
+    "backlight",
+    "mpris",
+    "title",
+    "notifications"
+    ],
+    "widget-config": {
+        "inhibitors": {
+          "button-text": "Clear All",
+          "clear-all-button": true
+        },
+        "title": {
+          "clear-all-button": true,
+          "button-text": "Clear All"
+        },
+        "mpris": {
+          "image-size": 128,
+          "image-radius": 8
+        },
+        "volume": {
+          "label": " ",
+          "show-per-app": true,
+          "expand-per-app": false,
+          "expand-button-label": "",
+          "collapse-button-label": ""
+        },
+        "backlight": {
+          "label": " ",
+          "device": "amdgpu_bl1"
+        }
     }
-   }
 }

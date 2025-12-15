@@ -6,15 +6,21 @@ configuration {
 }
 
 * {
-    bg: #222222;
-    fg: #FFFFFF;
-    accent: #ffffff99;
-    background: @bg;
-    foreground: @bg;
+    base: #0d0d0d;
+    subtle_base: #1a0f2c; 
+    subtle_base2: #000B1E;
+    primary1: #00ffff;
+    primary2: #ff00ff;
+    primary3: #9d00ff;
+    primary4: #39ff14;
+    primary5: #d1003f;
+    secondy1: #ff6c00;
+    secondy2: #00f0ff;
+    secondy3: #b3b3b3;
+    secondy4: #fdf800; 
     font: "iMWritingMono Nerd Font 14";
 }
 
-/*****----- Main Window -----*****/
 window {
     /* properties for window widget */
     transparency:                "real";
@@ -31,10 +37,11 @@ window {
     padding:                     0px;
     border:                      1px solid;
     border-radius:               20px;
-    border-color:                @accent;
+    border-color:                @primary1;
+    box-shadow:                  0px 0px 5px 3px @primary1;
     cursor:                      "default";
     /* Backgroud Colors */
-    background-color:            @bg;
+    background-color:            alpha;
 }
 
 /*****----- Main Box -----*****/

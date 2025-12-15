@@ -2,9 +2,9 @@
     "layer": "top",
 
     "margin-bottom": 0,
-    "margin-top": 10,
-    "margin-left": 10, 
-    "margin-right": 10,
+    "margin-top": 0,
+    "margin-left": 0, 
+    "margin-right": 0,
 
     "spacing": 0,
 
@@ -22,7 +22,8 @@
         "custom/updates",
         "network",
         "bluetooth",
-        "group/pulse",
+        "pulseaudio#audio",
+        "pulseaudio#microphone",
         "power-profiles-daemon",
         "battery",
         "custom/notification",
@@ -47,6 +48,7 @@
         "dynamic-separator": " | ",
         "title-len": 15,
         "artist-len": 10,
+        "on-click-right": "swaync-client -op",
         "player-icons": {
             "default": "",
             "firefox": ""
@@ -107,19 +109,12 @@
         "tooltip-format-enumerate-connected": "{device_alias}"
     },
 
-    "group/pulse": {
-        "orientation": "horizontal", 
-        "modules": [
-            "pulseaudio#audio", 
-            "pulseaudio#microphone"
-        ]
-    },
-
     "pulseaudio#audio": {
-        "format": "{volume} {icon}",
+        "format": "{icon}  {volume}",
         "tooltip": true, 
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "format-muted": "{volume} ", 
+        "on-click-right": "swaync-client -op",
+        "format-muted": "  {volume}", 
         "format-icons": {
             "default": ["", "", ""]
         }, 
@@ -129,8 +124,8 @@
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " ",
-        "format-source-muted": "",
+        "format-source": "",
+        "format-source-muted": "",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     },
 
