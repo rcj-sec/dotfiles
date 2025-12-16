@@ -1,0 +1,11 @@
+[Unit]
+Description=One-shot alarm timer (%i)
+
+[Timer]
+OnCalendar=*-*-* %i:00
+AccuracySec=1s
+Unit=alarm@%i.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

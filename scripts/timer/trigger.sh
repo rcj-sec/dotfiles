@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 # Input: total seconds
 total_seconds=$1
@@ -13,5 +13,5 @@ output=""
 [[ $minutes -gt 0 ]] && output+="${minutes}m "
 [[ $seconds -gt 0 || -z "$output" ]] && output+="${seconds}s"
 
-notify-send "Time is up" "Time passed: $output"
+notify-send "Time is up" "Time passed: $output" -u critical
 systemctl --user stop timer@${total_seconds}.timer

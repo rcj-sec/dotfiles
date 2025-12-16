@@ -1,0 +1,5 @@
+[Unit]
+Description=One-shot alarm (%i)
+
+[Service]
+ExecStart=%h/scripts/alarm/trigger.sh %i

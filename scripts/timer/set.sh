@@ -21,6 +21,5 @@ if [ "$total_seconds" -le 0 ]; then
 fi;
 
 notify-send "Timer set for $arguments" "Time is ticking..."
-echo "set timer for $arguments"
 
 systemctl --user start timer@${total_seconds}.timer
