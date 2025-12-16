@@ -1,0 +1,6 @@
+[Unit]
+Description=Timer service (%i seconds)
+
+[Service]
+Type=oneshot
+ExecStart=%h/scripts/timer/trigger.sh %i

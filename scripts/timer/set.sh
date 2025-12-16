@@ -16,19 +16,11 @@ for arg in "$@"; do
 done
 
 if [ "$total_seconds" -le 0 ]; then
-    echo "Usage: $0 1h 20m 40s"
+    notify-send "Bad usage: timer" "Example: timer 60m"
     exit 1
 fi;
 
-echo "[+] Setting timer for $arguments"
-echo "[+] Total seconds: $total_seconds"
+notify-send "Timer set for $arguments" "Time is ticking..."
+echo "set timer for $arguments"
 
-noti_id=$(notify-send "Timer set for $arguments" "Time is ticking..." -p)
-
-sleep "$total_seconds"
-
-notify-send "Time is up" "Your timer has finished." -u critical -r "$noti_id"
-
-if command -v paplay &> /dev/null; then 
-    paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga &
-fi
+systemctl --user start timer@${total_seconds}.timer

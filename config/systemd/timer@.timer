@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer (%i seconds)
+
+[Timer]
+OnActiveSec=%i
+AccuracySec=1s
+Unit=timer@%i.service
+
+[Install]
+WantedBy=timers.target
