@@ -20,6 +20,6 @@ if [ "$total_seconds" -le 0 ]; then
     exit 1
 fi;
 
-notify-send "Timer set for $arguments" "Time is ticking..."
+notify-send "Timer set for $arguments" "Time is ticking..." -e
 
-systemctl --user start timer@${total_seconds}.timer
+systemctl --user start timer@${total_seconds}.timer 

@@ -13,5 +13,11 @@ output=""
 [[ $minutes -gt 0 ]] && output+="${minutes}m "
 [[ $seconds -gt 0 || -z "$output" ]] && output+="${seconds}s"
 
-notify-send "Time is up" "Time passed: $output" -u critical
+mpv --loop  --no-video --volume=130 /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga &
+MPV_PID==$!
+
+trap "kill $MPV_PID 2>/dev/null" EXIT
+
+notify-send "Time is up" "Time passed: $output" -u critical -w
+
 systemctl --user stop timer@${total_seconds}.timer

@@ -22,6 +22,7 @@ fi
 
 alarm_time=$(printf "%02d:%02d" "$hours" "$minutes")
 
+notify-send "Alarm set for ${hours}h ${minutes}m" "Arch will let you know..." -e
+
 systemctl --user start alarm@${alarm_time}.timer
 
-notify-send "Alarm set for: ${hours}h ${minutes}m"
