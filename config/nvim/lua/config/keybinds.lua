@@ -8,7 +8,7 @@ vim.keymap.set({ "n", "i", "v" }, '<C-f>', '<Esc>')
 vim.keymap.set({ "n", "i", "v" }, "<M-e>", "<Esc>:Explore<CR>", { noremap = true, silent = true })
 
 -- ALT + n = toggle neotree
-vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree float<CR>", { noremap = true, silent = true })
 
 -- ALT + w = :w
 vim.keymap.set({ "n", "i", "v" }, "<M-w>", "<Esc>:w<CR>", { noremap = true, silent = true })

@@ -5,3 +5,4 @@ insensitive=true
 no_actions=true
 parse_action=true
 location=2
+close_on_focus_loss=true
