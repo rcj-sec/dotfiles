@@ -19,7 +19,7 @@ alias downloads="cd $HOME/Downloads"
 
 alias ..="cd .."
 alias ll='ls -Al'
-alias ls='ls --group-directories-first --indicator-style=classify --color=auto'
+alias ls='ls --group-directories-first --indicator-style=classify'
 
 alias starpreset="$HOME/.config/starship/preset-manager.sh"
 alias find_java_class="$HOME/scripts/find_java_class.sh"
@@ -41,4 +41,3 @@ export PATH="$PATH:$HOME/.local/bin"
 
 eval "$(starship init zsh)"
 eval "$(dircolors ~/.dircolors)"
-
