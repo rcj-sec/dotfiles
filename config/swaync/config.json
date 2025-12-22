@@ -8,16 +8,13 @@
     "timeout": 3,
     "timeout-low": 2,
 
-    "rules": [
-        {
-            "app_name": "updates",
-            "icon": "", 
-            "actions": {
-                "Update": "notify-send updating"
-            },
-            "body_click_command": "kitty"
+    "scripts": {
+        "screenshots": {
+            "category": "^screenshot$", 
+            "exec": "eog ~/.cache/hyprcap/capture.png",
+            "run-on": "action"
         }
-    ],
+    },
 
     "widgets": [
     "dnd",
