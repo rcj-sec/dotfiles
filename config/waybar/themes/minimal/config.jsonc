@@ -1,0 +1,240 @@
+{
+    "layer": "top",
+
+    "margin-bottom": 0,
+    "margin-top": 0,
+    "margin-left": 0, 
+    "margin-right": 0,
+
+    "spacing": 0,
+
+    "mode": "dock",
+
+    "modules-left": [
+        "clock",
+        "custom/rightsep",
+        "hyprland/language",
+        "custom/rightsep",
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+
+    "modules-right": [
+        "custom/leftsep",
+        "mpris",
+        "custom/leftsep",
+        "custom/updates",
+        "custom/leftsep",
+        "network",
+        "custom/leftsep",
+        "bluetooth",
+        "custom/leftsep",
+        "pulseaudio#audio",
+        "custom/leftsep",
+        "pulseaudio#microphone",
+        "custom/leftsep",
+        "power-profiles-daemon",
+        "custom/leftsep",
+        "battery",
+        "custom/leftsep",
+        "custom/notification",
+        "custom/leftsep",
+        "group/session",
+    ],
+
+    "custom/rightsep": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/leftsep": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "group/session": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500, 
+            "transition-left-to-right": false,
+            "click-to-reveal": true,
+        },
+        "modules": [
+            "custom/logo",
+            "custom/poweroff",
+            "custom/reboot",
+            "custom/logout",
+            "custom/lock"
+        ]
+    },
+    
+    "custom/logo": {
+        "format": "󰣇",
+        "tooltip-format": "Click to expand",
+    },
+
+    "custom/poweroff": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "poweroff"
+    },
+
+    "custom/reboot": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+
+    "custom/logout": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+
+    "custom/lock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+             "default": "",
+             "empty": "",
+             "active": "",
+        },
+    },
+
+    "mpris": {
+        "format": "{player_icon}{dynamic}",
+        "format-paused": "{status_icon}<i>{dynamic}</i>",
+        "dynamic-order": ["title"],
+        "title-len": 15,
+        "on-click-right": "swaync-client -op",
+        "player-icons": {
+            "default": " ",
+            "firefox": " "
+        },
+        "status-icons": {
+            "paused": " "
+        },
+        "tooltip-format": "Via {player}"
+        // "ignored-players": ["firefox"]
+    },
+
+    "hyprland/language": {
+        "format-en-intl": "  INT",
+        "format-en": "  US",
+        "on-click": "hyprctl switchxkblayout all next",
+    },
+  
+    "clock": {
+        "format": "{:%H:%M  %a %d %b}",
+        "tooltip": false,
+    },
+
+    "custom/updates": {
+        "exec": "sh ~/.config/waybar/modules/updates/exec.sh",
+        "interval": 3600,
+        "signal": 8,
+        "on-click": "kitty -e ~/scripts/update-system.sh",
+        "on-right-click": "pkill -RTMIN+8 waybar",
+    },
+
+    "network": {
+        "format-ethernet": "󰈀 {ifname}",
+        "format-wifi": "  {signalStrength} %",
+        "format-linked": "󰈀 {ifname}",
+        "format-disconnected": "󰇨 No connection",
+        "format-disabled": " Disabled",
+        "tooltip-format-ethernet": "{ipaddr}",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-disconnected": "No network connected",
+        "tooltip-format-disabled": "Check rfkill."
+    },
+
+    "bluetooth": {
+        "format-on": "󰂯 {num_connections}",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-connected": "󰂯 {num_connections}",
+        "on-click": "rfkill toggle bluetooth",
+        "tooltip-format-on": "Bluetooth on",
+        "tooltip-format-off": "Bluetooth off",
+        "tooltip-format-disabled": "Bluetooth off",
+        "tooltip-format-connected": "{controller_alias}\n-\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
+    },
+
+    "pulseaudio#audio": {
+        "format": "{icon}  {volume}",
+        "tooltip": true, 
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "swaync-client -op",
+        "format-muted": "  {volume}", 
+        "format-icons": {
+            "default": ["", "", ""]
+        }, 
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1", 
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1" 
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power mode",
+        "tooltip": true,
+        "format-icons": {
+            "performance": "󰓅 Max",
+            "balanced": "󰾅 Bal",
+            "power-saver": "󰾆 Eco"
+        }
+    },
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery 󰂃' 'Please charge now.'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery 󱉝' 'Computer will die soon...'",
+            "on-charging-100": "notify-send -u normal 'Battery Full 󱟢' 'Computer is fully charged. You can disconnect'"
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+}

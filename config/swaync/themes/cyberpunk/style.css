@@ -1,0 +1,364 @@
+@define-color accent #59E1E3;
+@define-color bluebg #0D0F31;
+@define-color lightbluebg #3D3F5A; 
+@define-color greybg #222222;
+@define-color textfg #FFFFFF;
+
+@define-color base #0d0d0d;
+@define-color subtle_base #1a0f2c;
+@define-color subtle_base2 #000B1E;
+
+@define-color primary1 #00ffff;
+@define-color primary2 #ff00ff;
+@define-color primary3 #9d00ff;
+@define-color primary4 #39ff14;
+@define-color primary5 #d1003f;
+
+
+@define-color secondy1 #ff6c00;
+@define-color secondy2 #00f0ff;
+@define-color secondy3 #b3b3b3;
+@define-color secondy4 #fdf800;
+
+* {
+    font-family: "Play";
+}
+
+.control-center {
+    background: alpha(@base, 0.9);
+    border: 2px solid @primary3;
+    border-radius: 10;
+    margin: 20px;
+    box-shadow: 0px 0px 5px 3px alpha(@primary3, 1.0);
+}
+
+.control-center-list-placeholder {
+    color: @primary4;
+}
+
+.control-center-list {
+    border-radius: 10px;
+}
+
+.floating-notification {
+    background: pink;
+}
+
+.notification-group {
+    background: transparent;
+}
+
+.notification-group:hover {
+    background: transparent;
+}
+
+.notification-group:focus {
+    border: transparent;
+}
+
+/*container close button for notification gorup when group is not focused*/
+.notification-group-close-button {
+}
+
+/*container close and collapse notification group buttons*/
+.notification-group-buttons > button {
+    color: @primary1;
+    border: 1px solid @primary1;
+    background: @subtle_base;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.notification-group-buttons > button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
+}
+
+.notification-group-buttons > button #1 {
+
+}
+
+/*notification group title*/
+.notification-group-headers {
+    opacity: 0;
+}
+
+/*.notification group header text only*/
+.notification-group-header {
+    background: transparent;
+}
+
+/*notification group header icon only*/
+.notification-group-icon {
+    background: transparent;
+}
+
+/*background of the row the notification is in*/
+/*the notification-background is painted over it*/
+.notification-row {
+    background: transparent;
+}
+
+/*background of the notification container*/
+.notification-background {
+    background: transparent;
+    color: red;
+}
+
+/*notification itself*/
+.notification {
+    background: @subtle_base;
+    border: 1px solid @primary4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary4, 0.5);
+}
+
+.notification image {
+    border-radius: 0px;
+}
+
+.icon {
+    color: pink;
+    background: blue;
+    border: 1px solid red;
+}
+
+.notification:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary4, 0.5);
+}
+
+.notification.critical {
+    border: 1px solid @primary5;
+    box-shadow: 0px 0px 5px 1px alpha(@primary5, 0.5);
+}
+
+.notification.critical:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary5, 0.5);
+}
+
+.notification.low {
+    border: 1px solid @secondy4; 
+    box-shadow: 0px 0px 5px 1px alpha(@secondy4, 0.5);
+}
+
+.notification.low:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@secondy4, 0.5);
+}
+
+/*notification or notification group focused*/
+/*painted over the notification itself*/
+.notification-default-action {
+    background: transparent;
+}
+
+.notification-action:hover {
+}
+
+/*container for content inside notification*/
+.notification-content {
+    background: transparent;
+}
+
+/*close button for individual notification*/
+.close-button {
+    background: transparent;
+    border: none;
+    color: @secondy3;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+}
+
+.close-button:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+/*container for the app icon*/
+.image {
+    background: transparent;
+    margin-right: 20px;
+}
+
+/*actual icon*/
+.icon {
+
+}
+
+.text-box {
+    background: transparent;
+}
+
+.summary {
+    background: transparent;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.time {
+    background: transparent;
+    margin-right: 50px;
+}
+
+.body {
+    background: transparent;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+/*no clue*/
+.body-image {
+    background: yellow;
+}
+
+/*all label items*/
+label {
+    background: transparent;
+}
+
+progressbar {
+    background: yellow;
+}
+
+slider {
+    color: pink;
+}
+
+scrollbar, scrollbar:hover {
+    opacity: 0;
+}
+
+.widget-title {
+    background: transparent;
+    border: 1px solid @primary1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-title > button {
+    border: 1px solid @primary2;
+    color: white;
+    background: @subtle_base;
+    box-shadow: 0px 0px 5px 1px alpha(@primary2, 0.5);
+}
+
+.widget-title > button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary2, 0.5);
+    font-weight: bold;
+}
+
+.widget-title > label {
+    font-family: "Play";
+    font-size: 16pt;
+}
+
+.widget-notifications {
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-volume{
+    color: @primary1;
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-backlight {
+    color: @primary1;
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-volume button {
+    color: @primary1;
+    border: 1px solid @primary1;
+    background: @subtle_base;
+    padding: 0px 5px 0px 5px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-volume button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
+}
+
+.widget-volume > box > label  {
+    color: @secondy4;
+    padding-left: 13px;
+    font-size: 18px;
+}
+
+.widget-backlight label {
+    color: @secondy4;
+    padding-left: 13px;
+    font-size: 18px;
+}
+
+.widget-volume scale {
+    padding-left: 4px;
+}
+
+.widget-backlight > box > scale {
+    padding-left: 4px;
+    padding-right: 10px;
+}
+
+highlight {
+    color: @secondy4; 
+    background: @secondy4;
+    box-shadow: 0px 0px 5px 3px alpha(@secondy4, 0.5);
+}
+
+trough {
+    color: @primary2;
+    background: @primary2;
+    box-shadow: 0px 0px 5px 1px alpha(@secondy4, 0.5);
+}
+
+trough slider { 
+    color: @primary1;
+    background: @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+slider:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
+}
+
+.widget-dnd {
+    background: transparent;
+    border: 1px solid @primary1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-dnd > label {
+    font-family: "Play";
+    font-size: 16pt;
+}
+
+.widget-dnd > switch {
+    border: 1px solid @primary1;
+    background: @subtle_base;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-dnd switch slider {
+    background: @subtle_base;
+    border: 1px solid @primary1;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+}
+
+.widget-dnd switch slider:hover {
+}
+
+.widget-dnd > switch:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
+}
+
+.widget-dnd > switch:checked {
+    box-shadow: 0px 0px 5px 4px alpha(@primary1, 0.5);
+}
+
+.widget-dnd > switch:checked slider {
+    background: @primary1;
+}

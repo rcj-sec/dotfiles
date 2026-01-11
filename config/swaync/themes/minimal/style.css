@@ -1,0 +1,318 @@
+@define-color fg pink;
+@define-color altfg cyan;
+@define-color bg black; 
+
+* {
+    font-family: "Play";
+}
+
+.control-center {
+    background: @bg;
+    border: 2px solid @fg;
+    border-radius: 10;
+    margin: 20px;
+}
+
+.control-center-list-placeholder {
+    color: @fg;
+}
+
+.control-center-list {
+    border-radius: 10px;
+}
+
+.floating-notification {
+    background: @fg;
+}
+
+.notification-group {
+    background: transparent;
+}
+
+.notification-group:hover {
+    background: transparent;
+}
+
+.notification-group:focus {
+    border: transparent;
+}
+
+/*container close button for notification gorup when group is not focused*/
+.notification-group-close-button {
+}
+
+/*container close and collapse notification group buttons*/
+.notification-group-buttons > button {
+    color: @fg;
+    border: 1px solid @fg;
+    background: @bg;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.notification-group-buttons > button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+}
+
+.notification-group-buttons > button #1 {
+
+}
+
+/*notification group title*/
+.notification-group-headers {
+    opacity: 0;
+}
+
+/*.notification group header text only*/
+.notification-group-header {
+    background: transparent;
+}
+
+/*notification group header icon only*/
+.notification-group-icon {
+    background: transparent;
+}
+
+/*background of the row the notification is in*/
+/*the notification-background is painted over it*/
+.notification-row {
+    background: transparent;
+}
+
+/*background of the notification container*/
+.notification-background {
+    background: transparent;
+}
+
+/*notification itself*/
+.notification {
+    background: @bg;
+    border: 1px solid @fg;
+    border-radius: 10px;
+}
+
+.notification image {
+    border-radius: 0px;
+}
+
+.icon {
+    color: pink;
+    background: blue;
+    border: 1px solid red;
+}
+
+.notification:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+}
+
+.notification.critical {
+    border: 1px solid red;
+}
+
+.notification.critical:hover {
+    box-shadow: 0px 0px 5px 3px alpha(red, 0.5);
+}
+
+.notification.low {
+    border: 1px solid yellow; 
+}
+
+.notification.low:hover {
+    box-shadow: 0px 0px 5px 3px alpha(yellow, 0.5);
+}
+
+/*notification or notification group focused*/
+/*painted over the notification itself*/
+.notification-default-action {
+    background: transparent;
+}
+
+.notification-action:hover {
+}
+
+/*container for content inside notification*/
+.notification-content {
+    background: transparent;
+}
+
+/*close button for individual notification*/
+.close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid transparent;
+}
+
+.close-button:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+/*container for the app icon*/
+.image {
+    background: transparent;
+    margin-right: 20px;
+}
+
+/*actual icon*/
+.icon {
+
+}
+
+.text-box {
+    background: transparent;
+}
+
+.summary {
+    background: transparent;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.time {
+    background: transparent;
+    margin-right: 50px;
+}
+
+.body {
+    background: transparent;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+/*no clue*/
+.body-image {
+    background: yellow;
+}
+
+/*all label items*/
+label {
+    background: transparent;
+}
+
+progressbar {
+    background: yellow;
+}
+
+slider {
+    color: pink;
+}
+
+scrollbar, scrollbar:hover {
+    opacity: 0;
+}
+
+.widget-title {
+    background: transparent;
+    border: 1px solid @fg;
+    border-radius: 10px;
+}
+
+.widget-title > button {
+    border: 1px solid @fg;
+    color: white;
+    background: @bg;
+}
+
+.widget-title > button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+    font-weight: bold;
+}
+
+.widget-title > label {
+    font-family: "Play";
+    font-size: 16pt;
+}
+
+.widget-notifications {
+    border: 1px solid @fg;
+}
+
+.widget-volume{
+    border: 1px solid @fg;
+}
+
+.widget-backlight {
+    border: 1px solid @fg;
+}
+
+.widget-volume button {
+    border: 1px solid @fg;
+    background: @bg;
+    padding: 0px 5px 0px 5px;
+}
+
+.widget-volume button:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+}
+
+.widget-volume > box > label  {
+    padding-left: 13px;
+    font-size: 18px;
+}
+
+.widget-backlight label {
+    padding-left: 13px;
+    font-size: 18px;
+}
+
+.widget-volume scale {
+    padding-left: 4px;
+}
+
+.widget-backlight > box > scale {
+    padding-left: 4px;
+    padding-right: 10px;
+}
+
+highlight {
+    background: @fg;
+}
+
+trough {
+    background: alpha(@fg, 0.5);
+}
+
+trough slider { 
+    background: @fg;
+}
+
+slider:hover {
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+}
+
+.widget-dnd {
+    background: @bg;
+    border: 1px solid @fg;
+    border-radius: 10px;
+}
+
+.widget-dnd > label {
+    font-family: "Play";
+    font-size: 16pt;
+}
+
+.widget-dnd > switch {
+    border: 1px solid @fg;
+    background: @bg;
+}
+
+.widget-dnd switch slider {
+    border: 1px solid @fg;
+    background: @bg;
+}
+
+.widget-dnd switch slider:hover {
+}
+
+.widget-dnd > switch:hover {
+}
+
+.widget-dnd > switch:checked {
+}
+
+.widget-dnd > switch:checked slider {
+    background: @fg;
+}

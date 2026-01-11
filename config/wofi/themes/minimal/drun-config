@@ -1,0 +1,7 @@
+[config]
+stylesheet=drun-style.css
+width=500px
+height= 400px
+insensitive=true
+no_actions=true
+close_on_focus_loss=true

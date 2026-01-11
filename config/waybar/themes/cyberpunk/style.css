@@ -1,0 +1,152 @@
+@define-color base #0d0d0d;
+@define-color subtle_base #1a0f2c;
+@define-color subtle_base2 #000B1E;
+
+@define-color primary1 #00ffff;
+@define-color primary2 #ff00ff;
+@define-color primary3 #9d00ff;
+@define-color primary4 #39ff14;
+@define-color primary5 #d1003f;
+
+
+@define-color secondy1 #ff6c00;
+@define-color secondy2 #00f0ff;
+@define-color secondy3 #b3b3b3;
+@define-color secondy4 #fdf800;
+
+
+* {
+    font-family: "iMWritingMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    color: white; 
+    background: transparent;
+}
+
+#waybar > box {
+    background: alpha(@base, 0.9);
+    transition: 0.2s ease;
+    border-radius: 10px;
+    border: 1px solid @primary2;
+    margin: 10px 10px 10px 10px;
+    box-shadow: 0px 0px 5px 3px alpha(@primary2, 1.0);
+}
+
+#workspaces {
+    padding: 3px 0px 3px 5px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: alpha(@primary1, 0.4);
+    border: 0px;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#workspaces button.empty {
+    color: alpha(@secondy3, 0.4);
+}
+
+#workspaces button.active {
+    color: @primary1;
+}
+
+#workspaces button:hover {
+    color: @primary1;
+    box-shadow: none;
+    text-shadow: none;
+    border: 0px;
+}
+
+#clock.c2 {
+    border-right: 2px solid @primary2;
+    padding-right: 10px;
+}
+
+#clock {
+    font-family: "Play";
+    margin: 5px 0px 5px 0px;
+    padding-left: 10px;
+    color: white;
+}
+
+#custom-lock, #custom-reboot, #custom-poweroff, #pulseaudio, #custom-notification, #custom-updates, #language, #network, #power-profiles-daemon, #battery, #bluetooth, #mpris { 
+    background: alpha(@subtle_base, 1.0);
+    border: 1px solid @primary1;
+    border-radius: 18px;
+    box-shadow: 0px 0px 5px 1px alpha(@primary1, 0.5);
+    margin: 5px 7px 5px 7px;
+    padding: 0px 10px 0px 10px;
+    min-width: 30px;
+}
+
+#mpris:hover,
+#language:hover, 
+#bluetooth:hover, 
+#pulseaudio:hover, 
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-updates:hover,
+#custom-poweroff:hover,
+#bluetooth.disabled:hover,
+#custom-notification.notification:hover,
+#custom-notification.none:hover,
+#custom-notification.dnd-notification:hover,
+#custom-notification.dnd-none:hover,
+#power-profiles-daemon:hover, 
+#pulseaudio.audio.muted:hover, 
+#pulseaudio.microphone.source-muted:hover {
+    color: @secondy4;
+    box-shadow: 0px 0px 5px 3px alpha(@primary1, 0.5);
+    transition: 0.2s ease;
+    background: inherit;
+}
+
+#custom-notification.notification {
+    color: @primary1;
+    background: alpha(@primary1, 0.5);
+}
+
+#custom-notification.dnd-notification {
+    color: @subtle_base;
+    background: alpha(@primary1, 0.5);
+}
+
+#custom-notification.none, #custom-notification.dnd-none {
+    color: @secondy3;
+}
+
+#bluetooth.connected {
+    color: @primary4;
+}
+
+#battery.warning {
+    color: @secondy4;
+}
+
+#battery.critical {
+    color: @primary5;
+}
+
+#battery.charging {
+    color: @primary4;
+}
+
+#pulseaudio.microphone {
+    color: @secondy4;
+}
+
+#bluetooth.off,
+#bluetooth.disabled,
+#pulseaudio.audio.muted,
+#pulseaudio.microphone.source-muted {
+    color: alpha(@secondy3, 0.5);
+}

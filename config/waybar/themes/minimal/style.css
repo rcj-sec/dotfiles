@@ -1,0 +1,121 @@
+@define-color fg pink;
+@define-color altfg cyan;
+@define-color bg black;
+
+* {
+    font-family: "iMWritingMono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    color: @fg;
+    background: @bg;
+}
+
+#custom-rigthsep, #custom-leftsep {
+    padding: 0px 5px 0px 5px;
+}
+
+#workspaces {
+    padding-right: 2px;
+}
+
+#workspaces button {
+    border: none;
+    box-shadow: none;
+    text-shadow:none;
+    color: alpha(@fg, 0.4);
+    padding: 0px 3px 0px 3px;
+    background: transparent;
+}
+
+#workspaces button.empty {
+    color: alpha(white, 0.4);
+}
+
+#workspaces button.active {
+    color: @fg;
+}
+
+#workspaces button:hover {
+    color: @fg;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    transition: none;
+}
+
+#clock {
+    padding: 0px 5px 0px 10px;
+}
+
+#language {
+    padding: 0px 5px 0px 10px;
+}
+
+#mpris,
+#custom-updates,
+#network,
+#bluetooth,
+#pulseaudio,
+#power-profiles-daemon,
+#battery,
+#custom-notification {
+    padding: 0px 5px 0px 5px;
+    border: none;
+}
+
+#language:hover, 
+#mpris:hover,
+#custom-updates:hover,
+#bluetooth:hover,
+#bluetooth.off:hover,
+#bluetooth.disabled:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone.source-muted:hover,
+#power-profiles-daemon:hover,
+#custom-notification:hover,
+#custom-lock:hover, #custom-logout:hover, #custom-reboot:hover, #custom-poweroff:hover, #custom-logo:hover {
+    color: @altfg;
+}
+
+#clock {
+    padding-right: 10px;
+}
+
+#custom-lock, #custom-logout, #custom-reboot, #custom-poweroff {
+    font-size: 14px;
+}
+
+#custom-lock, #custom-logout, #custom-reboot, #custom-poweroff, #custom-logo {
+    padding: 0 7px 0 7px;
+    border: none;
+}
+
+#custom-logo {
+    margin-right: 15px;
+    border-radius: 100%;
+    color: @altfg;
+}
+
+#custom-lock:hover, #custom-logout:hover, #custom-reboot:hover, #custom-poweroff:hover {
+    font-size: 16px;
+}
+
+#battery.charging,
+#pulseaudio.microphone,
+#bluetooth.connected {
+    color: @altfg;
+}
+
+#bluetooth.off,
+#bluetooth.disabled,
+#pulseaudio.audio.muted,
+#pulseaudio.microphone.source-muted {
+    color: alpha(@fg, 0.5);
+}
+
