@@ -22,7 +22,6 @@
     ],
 
     "modules-right": [
-        "custom/leftsep",
         "mpris",
         "custom/leftsep",
         "custom/updates",
@@ -109,8 +108,8 @@
     },
 
     "mpris": {
-        "format": "{player_icon}{dynamic}",
-        "format-paused": "{status_icon}<i>{dynamic}</i>",
+        "format": " {player_icon}{dynamic}",
+        "format-paused": " {status_icon}<i>{dynamic}</i>",
         "dynamic-order": ["title"],
         "title-len": 15,
         "on-click-right": "swaync-client -op",
