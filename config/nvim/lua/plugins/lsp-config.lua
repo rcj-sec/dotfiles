@@ -24,10 +24,27 @@ return {
                   update_in_insert = true,
                   severity_sort = true,
             })
-            vim.lsp.config("asm-lsp", {
-                cmd = { "asm-lsp" },
-                filetypes = { "asm", "s"},
-            })
+
+            vim.lsp.config(
+                "asm-lsp", 
+                { 
+                    cmd = { "asm-lsp" }, 
+                    filetypes = { "asm", "s"}, 
+                }
+            )
+
+            vim.lsp.enable("asm-lsp")
+
+            vim.lsp.config(
+                "clangd", 
+                { 
+                    cmd = { "clangd", "--query-driver=$HOME/tools/xcomp/gcc_i686_elf/bin/i686-elf-gcc"}, 
+                    filetypes = { "c", "cpp"}, 
+                }
+            )
+
+            vim.lsp.enable("clangd")
+
         end
     }
 }
