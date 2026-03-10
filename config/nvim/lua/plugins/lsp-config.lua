@@ -34,11 +34,15 @@ return {
             )
 
             vim.lsp.enable("asm-lsp")
-
+            local home = os.getenv("HOME")
             vim.lsp.config(
                 "clangd", 
                 { 
-                    cmd = { "clangd", "--query-driver=$HOME/tools/xcomp/gcc_i686_elf/bin/i686-elf-gcc"}, 
+                    cmd = { 
+                        "clangd", 
+                        "--query-driver=" .. home .. "/tools/xcomp/gcc_i686_elf/bin/i686-elf-gcc",
+                        "--compile-commands-dir=."
+                    }, 
                     filetypes = { "c", "cpp"}, 
                 }
             )
