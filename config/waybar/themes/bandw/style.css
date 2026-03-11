@@ -1,4 +1,4 @@
-@define-color fg pink;
+@define-color fg white;
 @define-color altfg cyan;
 @define-color bg black;
 
@@ -65,7 +65,7 @@ window#waybar {
 #power-profiles-daemon,
 #battery,
 #custom-notification {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 15px 0px 15px;
     border: none;
 }
 
@@ -81,6 +81,10 @@ window#waybar {
 #custom-notification:hover,
 #custom-lock:hover, #custom-logout:hover, #custom-reboot:hover, #custom-poweroff:hover, #custom-logo:hover {
     color: @altfg;
+}
+
+#custom-notification {
+    margin-right: 10px;
 }
 
 #clock {

@@ -1,0 +1,1 @@
+add-auto-load-safe-path ~/osdev/code/barebones/.gdbinit
