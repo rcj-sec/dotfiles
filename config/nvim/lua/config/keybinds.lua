@@ -2,13 +2,14 @@ vim.g.mapleader = " "
 
 local builtin = require("telescope.builtin")
 
-vim.keymap.set({ "n", "i", "v" }, '<C-f>', '<Esc>')
+-- leader + rn
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
--- ALT + e = open explorer
-vim.keymap.set({ "n", "i", "v" }, "<M-e>", "<Esc>:Explore<CR>", { noremap = true, silent = true })
+-- ALT + e = switch between files back and forth
+vim.keymap.set({ "n", "i", "v" }, "<M-e>", "<C-^>", { noremap = true, silent = true })
 
 -- ALT + n = toggle neotree
-vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree float<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i", "v" }, "<M-n>", "<Esc>:Neotree left<CR>", { noremap = true, silent = true })
 
 -- ALT + w = :w
 vim.keymap.set({ "n", "i", "v" }, "<M-w>", "<Esc>:w<CR>", { noremap = true, silent = true })
@@ -41,10 +42,10 @@ vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 
 --navigate windows with ctrl + hjkl
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<M-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<M-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<M-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<M-l>", ":wincmd l<CR>")
 
 local dap = require("dap")
 

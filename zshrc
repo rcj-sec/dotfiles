@@ -40,4 +40,8 @@ export PATH="$PATH:$HOME/.local/bin"
 
 eval "$(starship init zsh)"
 eval "$(dircolors ~/.dircolors)"
+
 export PATH="$PATH:$HOME/tools/xcomp/gcc_i686_elf/bin"
+export CDPATH=".:$HOME/osdev/code:$CDPATH"
+
+DISABLE_AUTO_TITLE="true"
