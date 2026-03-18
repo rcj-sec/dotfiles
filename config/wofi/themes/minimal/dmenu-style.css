@@ -1,15 +1,12 @@
-@define-color fg pink;
-@define-color altfg cyan;
-@define-color bg black;
+@define-color bg white;
+@define-color fg black;
 
 * {
-    font-family: "Play";
-    font-weight: bold;
+    font-family: "iMWritingMono Nerd Font";
     font-size: 22px;
     min-height: 0;
     padding: 0;
     margin: 0;
-    color: white;
     border: none;
     border-radius: 10px;
     box-shadow: none;
@@ -25,14 +22,17 @@ window {
 }
 
 #input {
-    background: alpha(@bg, 0.5); 
-    border: 1px solid @fg;
+    background: alpha(@fg, 0.4);
+    color: alpha(@bg, 1);
+    border: 1px solid @bg;
     margin: 10px;
     padding: 5px;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
 }
 
 #input > image {
+    color: alpha(@bg, 0.5);
     padding: 0px 10px 0px 10px;
 }
 
@@ -42,28 +42,3 @@ scrolledwindow {
     margin-bottom: 10px;
 }
 
-#inner-box {
-    padding: 10px;
-}
-
-#entry {
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    box-shadow: none;
-    color: transparent;
-    background: transparent;
-}
-
-
-#entry:selected {
-    border: 1px solid @primary2;
-    box-shadow: 0px 0px 5px 3px alpha(@primary2, 0.5);
-    font-size: 26px;
-    padding-left: 20px;
-}
-
-#text:selected {
-    color: @primary1;
-    font-size: 26px;
-}

@@ -1,16 +1,13 @@
-@define-color fg pink;
-@define-cooor altfg cyan;
+@define-color fg white;
 @define-color bg black;
-
+@define-color sel cyan;
 
 * {
-    font-family: "Play";
-    font-weight: bold;
+    font-family: "iMWritingMono Nerd Font";
     font-size: 22px;
     min-height: 0;
     padding: 0;
     margin: 0;
-    color: white;
     border: none;
     border-radius: 10px;
     box-shadow: none;
@@ -23,12 +20,14 @@ window {
 
 #outer-box {
     margin: 10px;
-    background: alpha(@bg, 0.7);
+    background: alpha(@bg, 0.4);
     border: 1px solid @fg;
+    box-shadow: 0px 0px 5px 3px alpha(@bg, 0.5);
 }
 
 #input {
     background: transparent; 
+    color: @fg;
     border: 1px solid @fg;
     margin: 10px;
     padding: 5px;
@@ -54,16 +53,17 @@ scrolledwindow {
     margin: 0px;
     padding: 0px;
     box-shadow: none;
-    color: transparent;
+    color: @fg;
     background: transparent;
 }
 
 #entry:selected {
+    border: none;
     font-size: 26px;
     padding-left: 20px;
 }
 
 #text:selected {
-    color: @fg;
+    color: @sel;
     font-size: 26px;
 }

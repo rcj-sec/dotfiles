@@ -1,5 +1,4 @@
-@define-color fg pink;
-@define-color altfg cyan;
+@define-color fg white;
 @define-color bg black; 
 
 * {
@@ -7,10 +6,11 @@
 }
 
 .control-center {
-    background: @bg;
-    border: 2px solid @fg;
+    background: alpha(@bg, 0.4);
+    border: 1px solid @fg;
     border-radius: 10;
     margin: 20px;
+    box-shadow: 0px 0px 5px 3px (@bg, 0.4);
 }
 
 .control-center-list-placeholder {
@@ -45,7 +45,7 @@
 .notification-group-buttons > button {
     color: @fg;
     border: 1px solid @fg;
-    background: @bg;
+    background: transparent;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -86,7 +86,7 @@
 
 /*notification itself*/
 .notification {
-    background: @bg;
+    background: alpha(@bg, 0.4);
     border: 1px solid @fg;
     border-radius: 10px;
 }
@@ -213,11 +213,12 @@ scrollbar, scrollbar:hover {
 .widget-title > button {
     border: 1px solid @fg;
     color: white;
-    background: @bg;
+    background: transparent;
 }
 
 .widget-title > button:hover {
     box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+    background: alpha(@bg, 0.4);
     font-weight: bold;
 }
 
@@ -240,12 +241,13 @@ scrollbar, scrollbar:hover {
 
 .widget-volume button {
     border: 1px solid @fg;
-    background: @bg;
+    background: transparent;;
     padding: 0px 5px 0px 5px;
 }
 
 .widget-volume button:hover {
     box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
+    background: alpha(@bg, 0.4);
 }
 
 .widget-volume > box > label  {
@@ -284,7 +286,7 @@ slider:hover {
 }
 
 .widget-dnd {
-    background: @bg;
+    background: transparent;
     border: 1px solid @fg;
     border-radius: 10px;
 }
@@ -296,21 +298,23 @@ slider:hover {
 
 .widget-dnd > switch {
     border: 1px solid @fg;
-    background: @bg;
+    background: transparent;
 }
 
 .widget-dnd switch slider {
     border: 1px solid @fg;
-    background: @bg;
+    background: transparent;
 }
 
 .widget-dnd switch slider:hover {
+    background: @fg;
 }
 
 .widget-dnd > switch:hover {
 }
 
 .widget-dnd > switch:checked {
+    background: alpha(@bg, 0.4);
 }
 
 .widget-dnd > switch:checked slider {
