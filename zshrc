@@ -2,7 +2,6 @@ pathifier() {
     . $HOME/scripts/pathifier.sh
 }
 
-alias ntf="notify-send hello"
 tabs -4
 
 bindkey -v
@@ -15,9 +14,11 @@ export RCFILE="$HOME/.zshrc"
 
 alias lsalias='cat ~/.zshrc | grep alias'
 
-alias downloads="cd $HOME/Downloads"
+alias Downloads="cd $HOME/Downloads"
+alias Pictures="cd $HOME/Pictures"
 
 alias ..="cd .."
+alias cdb="cd -"
 alias ll='ls -Al'
 alias ls='ls --group-directories-first --indicator-style=classify'
 
