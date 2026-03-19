@@ -6,7 +6,7 @@
 }
 
 .control-center {
-    background: alpha(@bg, 0.4);
+    background: alpha(@bg, 0.6);
     border: 1px solid @fg;
     border-radius: 10;
     margin: 20px;
@@ -86,7 +86,7 @@
 
 /*notification itself*/
 .notification {
-    background: alpha(@bg, 0.4);
+    background: alpha(@bg, 0.6);
     border: 1px solid @fg;
     border-radius: 10px;
 }
@@ -218,7 +218,7 @@ scrollbar, scrollbar:hover {
 
 .widget-title > button:hover {
     box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
-    background: alpha(@bg, 0.4);
+    background: alpha(@bg, 0.6);
     font-weight: bold;
 }
 
@@ -247,7 +247,7 @@ scrollbar, scrollbar:hover {
 
 .widget-volume button:hover {
     box-shadow: 0px 0px 5px 3px alpha(@fg, 0.5);
-    background: alpha(@bg, 0.4);
+    background: alpha(@bg, 0.6);
 }
 
 .widget-volume > box > label  {
@@ -314,7 +314,7 @@ slider:hover {
 }
 
 .widget-dnd > switch:checked {
-    background: alpha(@bg, 0.4);
+    background: alpha(@bg, 0.6);
 }
 
 .widget-dnd > switch:checked slider {
