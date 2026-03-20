@@ -22,7 +22,7 @@ window {
 }
 
 #input {
-    background: alpha(@fg, 0.4);
+    background: alpha(@fg, 0.6);
     color: alpha(@bg, 1);
     border: 1px solid @bg;
     margin: 10px;
