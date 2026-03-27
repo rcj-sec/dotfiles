@@ -26,8 +26,7 @@ window#waybar {
 }
 
 #workspaces {
-    border: 0px solid #FFFFFF;
-    padding-right: 4px;
+    padding: 0px 4px 0px 5px;
     background: alpha(@bg, 0.4);
     border-radius: 5px;
 }
@@ -37,11 +36,11 @@ window#waybar {
     box-shadow: none;
     text-shadow:none;
     color: alpha(@fg, 0.4);
-    padding: 0px 3px 0px 3px;
+    padding-right: 6px;
 }
 
 #workspaces button.empty {
-    color: alpha(white, 0.4);
+    color: alpha(@fg, 0.4);
 }
 
 #workspaces button.active {
