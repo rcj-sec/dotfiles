@@ -25,29 +25,34 @@ return {
                   severity_sort = true,
             })
 
+            vim.filetype.add({
+                extension = {
+                    s = "asm",
+                    S = "asm",
+                },
+            })
+
+            local lsp_util = require("lspconfig.util")
+
             vim.lsp.config(
-                "asm-lsp", 
-                { 
-                    cmd = { "asm-lsp" }, 
-                    filetypes = { "asm", "s"}, 
+                "asm_lsp", 
+                {
+                cmd = { "asm-lsp" },
+                filetypes = { "asm" },
+                root_dir = function(fname)
+                    return lsp_util.root_pattern(".asm-lsp.toml", ".git")(fname)
+                        or vim.fn.getcwd()
+                end,
                 }
             )
 
-            vim.lsp.enable("asm-lsp")
-            local home = os.getenv("HOME")
             vim.lsp.config(
                 "clangd", 
-                { 
-                    cmd = { 
-                        "clangd", 
-                        "--query-driver=" .. home .. "/tools/xcomp/gcc_i686_elf/bin/i686-elf-gcc",
-                        "--compile-commands-dir=."
-                    }, 
-                    filetypes = { "c", "cpp"}, 
+                {
+                    cmd = { "clangd" },
+                    filetypes = { "c", "cpp" },
                 }
             )
-
-            vim.lsp.enable("clangd")
 
         end
     }

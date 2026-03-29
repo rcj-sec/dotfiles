@@ -46,3 +46,4 @@ export PATH="$PATH:$HOME/tools/xcomp/gcc_i686_elf/bin"
 export CDPATH=".:$HOME/osdev/code:$CDPATH"
 
 DISABLE_AUTO_TITLE="true"
+export PATH="$PATH:$HOME/.cargo/bin"
