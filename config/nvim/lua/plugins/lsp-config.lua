@@ -32,22 +32,20 @@ return {
                 },
             })
 
-            local lsp_util = require("lspconfig.util")
 
             vim.lsp.config(
-                "asm_lsp", 
+                "asm_lsp",
                 {
-                cmd = { "asm-lsp" },
-                filetypes = { "asm" },
-                root_dir = function(fname)
-                    return lsp_util.root_pattern(".asm-lsp.toml", ".git")(fname)
-                        or vim.fn.getcwd()
-                end,
+                    cmd = { "asm-lsp" },
+                    filetypes = { "asm" },
+                    handlers = {
+                        ["textDocument/publishDiagnostics"] = function() end,
+                    },
                 }
             )
 
             vim.lsp.config(
-                "clangd", 
+                "clangd",
                 {
                     cmd = { "clangd" },
                     filetypes = { "c", "cpp" },
