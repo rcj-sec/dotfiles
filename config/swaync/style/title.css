@@ -1,0 +1,37 @@
+.widget-title {
+    padding: 8px;
+}
+
+.widget-title > label {
+    opacity: 0%;
+}
+
+.widget-title > button {
+    background-color: alpha(@base, 0.7);
+    border: 1px solid @surface2;
+    border-radius: 20px;
+    padding: 2px 20px;
+    box-shadow: 0px 0px 10px 0px @main-bg;
+}
+
+.widget-title > button > label {
+    color: @lavender;
+}
+
+.widget-title > button:hover {
+    background-color: @base;
+    padding-right: 15px;
+    padding-left: 25px;
+}
+
+.widget-title > button:hover > label {
+    color: @red;
+}
+
+.widget-title > button:disabled > label {
+    color: @text;
+}
+
+.widget-title > button:disabled {
+    background-color: alpha(@base, 0.7);
+}

@@ -1,0 +1,73 @@
+@define-color clock @surface0;
+
+#custom-left_div.1 {
+    margin-left: 47px;
+    color: @clock;
+}
+
+#custom-left_div.2 {
+    color: @main-bg;
+    background-color: @clock;
+}
+
+#custom-left_div.3 {
+    color: @clock;
+}
+
+#clock.time {
+    background-color: @clock;
+    padding: 0px 5px; 
+}
+
+#clock.date {
+    background-color: @clock;
+    padding: 0px 5px;
+}
+
+#clock.date:hover {
+    color: @accent;
+}
+
+#custom-logo {
+    background-color: @clock;
+    padding-right: 3px;
+}
+
+#custom-logo:hover {
+    color: cyan;
+}
+
+#group-session {
+    background-color: @clock;
+}
+
+#custom-lock,
+#custom-logout,
+#custom-reboot,
+#custom-poweroff {
+    background-color: @clock;
+    padding: 0px 5px;
+}
+
+#custom-lock {
+    padding-right: 10px
+}
+
+#custom-lock:hover {
+    color: @accent;
+}
+
+#custom-logout:hover {
+    color: @yellow;
+}
+
+#custom-reboot:hover {
+    color: @lavender;
+}
+
+#custom-poweroff:hover {
+    color: @red;
+}
+
+
+

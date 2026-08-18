@@ -1,1 +1,48 @@
-themes/round_bandw/config.jsonc
+{
+
+    "include": [
+        "~/.config/waybar/modules/*.jsonc"
+    ],
+    
+    "output": "DP-1",
+
+    "modules-left": [
+        "hyprland/workspaces", 
+        "hyprland/language",
+        "mpris",
+    ],
+    
+    "modules-center": [
+        "clock#time",
+        "group/session",
+        "clock#date",
+    ],
+
+
+    "modules-right": [
+        "battery",
+        "memory",
+        "custom/dotsep1",
+        "cpu",
+        "network",
+        "custom/dotsep2",
+        "bluetooth",
+        "pulseaudio#audio",
+        "custom/dotsep3",
+        "pulseaudio#micro",
+        "power-profiles-daemon",
+        "custom/updates",
+        "custom/notification",
+    ],
+
+    "layer": "top",
+    "height": 0,
+    "width": 0,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+    "mode": "dock",
+    "reload_style_on_change": true
+
+}

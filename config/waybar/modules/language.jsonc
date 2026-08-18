@@ -1,0 +1,8 @@
+{
+    "hyprland/language": {
+        "format-en": " en",
+        "format-en-intl": " int",
+        "format-en-colemak_dh": " dh",
+        "on-click": "hyprctl switchxkblayout all next",
+    },
+}

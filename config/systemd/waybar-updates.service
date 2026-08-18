@@ -1,0 +1,6 @@
+[Unit]
+Description=Populate update cache
+
+[Service]
+Type=oneshot
+ExecStart=sh %h/scripts/check-updates.sh --notify 

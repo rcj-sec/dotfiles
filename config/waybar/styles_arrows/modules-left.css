@@ -1,0 +1,46 @@
+@define-color workspaces @surface0;
+
+#custom-right_inv.1 {
+    color: @main-bg;
+    background-color: @workspaces;
+}
+
+#custom-right_div.1 {
+    color: @main-bg; 
+    background-color: @workspaces;
+}
+
+#language {
+    padding: 0px 10px 0px 5px;
+    background-color: @language;
+}
+
+#language:hover {
+    color: @accent;
+}
+
+#workspaces {
+    padding: 0px 4px;
+    background-color: @workspaces
+}
+
+#workspaces button label{
+    padding: 0px 6px;
+}
+
+#workspaces button.empty label{
+    color: alpha(white, 0.4);
+}
+
+#workspaces button.active label {
+    color: @accent;
+}
+
+#mpris {
+    background-color: @workspaces;
+    padding: 0px 5px 0px 10px;
+}
+
+#mpris.playing {
+    color: @accent;
+}

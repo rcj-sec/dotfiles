@@ -1,0 +1,180 @@
+@define-color bg @surface0;
+
+@define-color memory @peach;
+@define-color network @blue;
+@define-color pulse @green;
+@define-color pwrprf @red;
+@define-color updates @yellow;
+@define-color notis @mauve;
+
+#custom-dotsep1 {
+    background-color: @bg;
+    border-top: 2px solid @memory;
+    border-bottom: 2px solid @memory;
+}
+
+#custom-dotsep1 label {
+    color: @memory;
+}
+
+#memory {
+    border: 2px solid @peach;
+    border-radius: 10px;
+    border-right: transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: @bg;
+    padding: 0px 5px 0px 10px;
+    margin-left: 5px;
+}
+
+#cpu {
+    border: 2px solid @peach;
+    border-radius: 10px;
+    border-left: transparent;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: @bg;
+    padding: 0px 10px 0px 5px;
+    margin-right: 5px;
+}
+
+#custom-dotsep2 {
+    background-color: @bg;
+    border-top: 2px solid @network;
+    border-bottom: 2px solid @network;
+}
+
+#custom-dotsep2 label {
+    color: @network;
+}
+
+#network {
+    border: 2px solid @network;
+    border-radius: 10px;
+    border-right: transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: @bg;
+    padding: 0px 5px 0px 10px;
+    margin-left: 5px;
+}
+
+#bluetooth {
+    border: 2px solid @network;
+    border-radius: 10px;
+    border-left: transparent;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: @bg;
+    padding: 0px 10px 0px 5px;
+    margin-right: 5px;
+}
+
+#bluetooth.disabled {
+    color: white;
+}
+
+#bluetooth:hover {
+    color: @bg;
+    background-color: @network;
+}
+
+#custom-dotsep3 {
+    background-color: @bg;
+    border-top: 2px solid @pulse;
+    border-bottom: 2px solid @pulse;
+}
+
+#custom-dotsep2 label {
+    color: @network;
+}
+
+#pulseaudio.audio {
+    border: 2px solid @pulse;
+    border-radius: 10px;
+    border-right: transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: @bg;
+    padding: 0px 5px 0px 10px;
+    margin-left: 5px;
+}
+
+#pulseaudio.audio.muted {
+    color: alpha(white, 0.4);
+}
+
+#pulseaudio.micro {
+    border: 2px solid @pulse;
+    border-radius: 10px;
+    border-left: transparent;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: @bg;
+    padding: 0px 10px 0px 5px;
+    margin-right: 5px;
+}
+
+#pulseaudio.micro.source-muted {
+    color: alpha(white, 0.4);
+}
+
+#pulseaudio:hover, 
+#pulseaudio.audio.muted:hover, 
+#pulseaudio.micro.source-muted:hover { 
+    color: @bg; 
+    background-color: @pulse;
+}
+
+#power-profiles-daemon {
+    border: 2px solid @pwrprf;
+    border-radius: 10px;
+    background-color: @bg;
+    padding: 0px 10px;
+    margin: 0px 5px;
+}
+
+#power-profiles-daemon:hover {
+    color: @bg;
+    background-color: @pwrprf;
+}
+
+#custom-updates {
+    border: 2px solid @updates;
+    border-radius: 10px;
+    background-color: @bg;
+    padding: 0px 10px;
+    margin: 0px 5px;
+}
+
+#custom-updates:hover {
+    background-color: @updates;
+}
+
+#custom-updates:hover label {
+    color: @bg;
+}
+
+#custom-notification {
+    border: 2px solid @notis;
+    border-radius: 10px;
+    background-color: @bg;
+    padding: 0px 10px;
+    margin: 0px 5px;
+}
+
+#custom-notification.notification label, 
+#custom-notification.dnd-notification label, 
+#custom-notification.inhibited-notification label,
+#custom-notification.dnd-inhibited-notification label {
+    color: @notis;
+}
+
+#custom-notification:hover {
+    background-color: @notis;
+}
+
+#custom-notification:hover label{
+    color: @bg;
+}

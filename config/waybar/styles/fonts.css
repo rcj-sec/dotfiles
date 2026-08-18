@@ -1,0 +1,15 @@
+* {
+    font-family: "iMWritingMono Nerd Font";
+    font-size: 16px;
+}
+
+#custom-left_div,
+#custom-left_inv,
+#custom-right_div,
+#custom-right_inv {
+    font-size: 22px;
+}
+
+#custom-logo {
+    font-size: 22px;
+}

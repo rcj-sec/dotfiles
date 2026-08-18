@@ -1,0 +1,17 @@
+{
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery 󰂃' 'Please charge now.'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery 󱉝' 'Computer will die soon...'",
+            "on-charging-100": "notify-send -u normal 'Battery Full 󱟢' 'Computer is fully charged. You can disconnect'"
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+}

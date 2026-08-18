@@ -1,0 +1,77 @@
+@define-color clock @lavender;
+@define-color logo @sky;
+@define-color bg @surface0;
+
+#clock.time {
+    margin: 0px 5px;
+    margin-left: 52px;
+    padding: 0px 10px;
+    background-color: @bg;
+    border-radius: 10px;
+    border: 2px solid @clock;
+}
+
+#clock.date {
+    margin: 0px 5px;
+    padding: 0px 10px;
+    background-color: @bg;
+    border-radius: 10px;
+    border: 2px solid @clock;
+}
+
+#clock.date:hover {
+    background-color: @clock;
+    color: @bg;
+}
+
+#custom-logo {
+    padding: 0px 13px 0px 10px;
+}
+
+#custom-logo:hover {
+    background-color: @logo;
+}
+
+#custom-logo:hover label {
+    color: @bg;
+}
+
+#session {
+    margin: 0px 5px;
+    background-color: @bg;
+    border-radius: 10px;
+    border: 2px solid @logo;
+}
+
+#custom-lock,
+#custom-logout,
+#custom-reboot,
+#custom-poweroff {
+    background-color: @bg;
+    padding: 0px 5px;
+    border-radius: 10px;
+    margin: 0px 5px;
+}
+
+#custom-poweroff {
+    margin-left: 10px;
+}
+
+#custom-lock:hover label {
+    color: @peach;
+}
+
+#custom-logout:hover label{
+    color: @yellow;
+}
+
+#custom-reboot:hover label {
+    color: @lavender;
+}
+
+#custom-poweroff:hover label {
+    color: @red;
+}
+
+
+

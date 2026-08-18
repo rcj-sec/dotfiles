@@ -1,0 +1,16 @@
+.module {
+}
+
+#waybar {
+    background-color: transparent;
+}
+
+tooltip {
+    border: 2px solid @main-br;
+    border-radius: 10px;
+    background-color: @main-bg
+}
+
+tooltip > box {
+    padding: 0px 6px;
+}

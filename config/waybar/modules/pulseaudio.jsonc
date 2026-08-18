@@ -1,0 +1,24 @@
+{
+    "pulseaudio#audio": {
+        "format": "{icon}  {volume}%",
+        "tooltip": true, 
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "swaync-client -op",
+        "format-icons": {
+            "default": ["", "", ""],
+        }, 
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1", 
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1",
+        "min-length": 8,
+        "max-length": 8
+    },
+
+    "pulseaudio#micro": {
+        "format": "  {source_volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.02+ -l 1", 
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.02- -l 1",
+        "min-length": 8,
+        "max-length": 8
+    },
+}

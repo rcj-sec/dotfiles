@@ -1,0 +1,12 @@
+{
+    "clock#time": {
+        "format": "{:%H:%M}",
+        "tooltip": false,
+    },
+
+    "clock#date": {
+        "format": "{:%a %d %b}", 
+        "tooltip": false,
+        "on-click": "gnome-calendar"
+    }
+}

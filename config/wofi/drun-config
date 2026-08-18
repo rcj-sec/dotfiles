@@ -1,1 +1,9 @@
-themes/minimal/drun-config
+[config]
+stylesheet=drun-style.css
+width=500px
+height= 400px
+insensitive=true
+no_actions=true
+close_on_focus_loss=true
+allow_images=true
+hide_scroll=true

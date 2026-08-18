@@ -1,0 +1,6 @@
+[Unit]
+Description=Refresh Waybar updates module
+
+[Service]
+Type=oneshot
+ExecStart=sh %h/scripts/check-updates.sh --notify

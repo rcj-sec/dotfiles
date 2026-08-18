@@ -4,9 +4,10 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
 vim.opt.number = true
+vim.opt.scrolloff = 999
 
 vim.api.nvim_create_autocmd(
-    {"InsertEnter"},
+    { "InsertEnter" },
     {
         pattern = "*",
         callback = function()
@@ -17,7 +18,7 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.api.nvim_create_autocmd(
-    {"InsertLeave"},
+    { "InsertLeave" },
     {
         pattern = "*",
         callback = function()
@@ -33,11 +34,11 @@ vim.o.foldmethod = "expr"
 vim.o.foldlevel = 99
 
 function _G.my_foldtext()
-  local line = vim.fn.getline(vim.v.foldstart)
-  local lines = vim.v.foldend - vim.v.foldstart + 1
-  return line .. " { " .. lines .. " lines }"
+    local line = vim.fn.getline(vim.v.foldstart)
+    local lines = vim.v.foldend - vim.v.foldstart + 1
+    return line .. " { " .. lines .. " lines }"
 end
 
 vim.opt.foldtext = "v:lua.my_foldtext()"
 
-vim.api.nvim_set_hl(0, "Folded", {fg = "#00FFFF", italic = true })
+vim.api.nvim_set_hl(0, "Folded", { fg = "#00FFFF", italic = true })

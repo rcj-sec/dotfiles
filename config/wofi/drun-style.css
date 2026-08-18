@@ -1,1 +1,66 @@
-themes/minimal/drun-style.css
+@define-color lavender       #b4befe;
+@define-color base           #1e1e2e;
+@define-color surface2       #585b70;
+
+* {
+    all: initial;
+    font-size: 22px;
+    border-radius: 30px;
+}
+
+window {
+}
+
+#outer-box {
+    padding: 10px;
+}
+
+#input {
+    caret-color: @lavender;
+    background-color: alpha(@base, 1);
+    box-shadow: 0px 0px 10px 0px @base;
+    border: 1px solid @surface2;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+#input > image {
+    color: @lavender;
+    padding-right: 10px;
+}
+
+#inner-box {
+}
+
+scrolledwindow {
+    background-color: alpha(@base, 1);
+    border: 1px solid @surface2;
+    box-shadow: 0px 0px 10px 0px @base;
+    padding: 0px 10px 10px 10px;
+    margin: 10px;
+}
+
+#entry {
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    border: 1px solid @lavender;
+    color: white;
+    background-color: alpha(@lavender, 0.1);
+}
+
+#text {
+    padding-left: 10px;
+}
+
+#entry:selected {
+    background-color: @lavender;
+}
+
+#text:selected {
+    color: @base;
+}
+
+scrollbar {
+    opacity: 0;
+}

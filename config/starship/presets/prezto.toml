@@ -5,10 +5,10 @@
 add_newline = false
 
 # A minimal left prompt
-format = """$python$directory$character"""
+format = """$directory$character"""
 
 # move the rest of the prompt to the right
-right_format = """$status$git_branch$git_status"""
+right_format = """$python$status$git_branch$git_status"""
 
 [character]
 success_symbol = "[❯](red)[❯](yellow)[❯](green)"
@@ -24,18 +24,15 @@ format = '[(\($virtualenv\) )]($style)'
 style = 'white'
 
 [git_status]
-format = '$all_status$ahead_behind '
-ahead = '[⬆](bold purple) '
-behind = '[⬇](bold purple) '
-staged = '[✚](green) '
-deleted = '[✖](red) '
-renamed = '[➜](purple) '
-stashed = '[✭](cyan) '
-untracked = '[◼](white) '
-modified = '[✱](blue) '
-conflicted = '[═](yellow) '
-diverged = '⇕ '
-up_to_date = ''
+format = '([\[($all_status$ahead_behind$stashed)\]($style)]($style))'
+style = "cyan"
+stashed = "≡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+deleted = ""
+staged = ""
+modified = ""
+untracked = ""
 
 [directory]
 style = "blue"

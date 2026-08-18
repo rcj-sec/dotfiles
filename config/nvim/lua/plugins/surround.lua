@@ -2,9 +2,17 @@ return {
     "kylechui/nvim-surround",
     version = "^3.0.0",
     event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
-}
+    opts = {
+    surrounds = {
+      ["n"] = {
+        add = { "**", "**" },
+        find = "%*%*.-%*%*",
+        delete = "^(%*%*)().-(%*%*)()$",
+      },
+      ["u"] = {
+        add = { "<u>", "</u>" },
+        find = "<u>.-</u>",
+        delete = "^(<u>)().-(</u>)()$",
+        },
+    },
+    }, }

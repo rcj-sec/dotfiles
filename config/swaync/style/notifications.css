@@ -1,0 +1,115 @@
+.widget-notifications {
+    background-color: alpha(@base, 0.7); 
+    border: 1px solid @surface2;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px @base;
+}
+
+/* Applies to all notifications: floating and in the control center */
+.notification {
+    background-color: @base;
+    border: 1px solid @lavender;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.widget-notifications .notification {
+    margin-bottom: 10px;
+}
+
+/* List of floating notifications */
+.floating-notifications {
+    margin: 10px 30px 0px 0px;
+}
+
+/* Container for floating notification */
+.floating-notifications animatedlistitem {
+    padding: 8px; 
+}
+
+.floating-notifications .notification {
+    box-shadow: 0px 0px 10px 0px @base;
+}
+
+.notification .summary {
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+.notification .summary, 
+.notification .body {
+    margin-left: 10px;
+}
+
+.notification-group {
+    margin: 10px;
+}
+
+.close-button {
+    background-color: @base;
+    border: 1px solid @lavender;
+    border-radius: 20px;
+    padding: 2px;
+    margin: -5px -5px 0px 0px;
+}
+
+.close-button:hover {
+    border: 1px solid @red;
+}
+
+.close-button:hover > image {
+    color: @red;
+}
+
+.notification-group-headers {
+    margin-bottom: 10px;
+}
+
+.notification-group-headers > image {
+    opacity: 0%;
+}
+
+.notification-group-headers > label {
+    margin-left: -10px;
+    font-size: 18px;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid @lavender;
+    border-radius: 20px;
+}
+
+.notification-group-collapse-button:hover {
+    border: 1px solid @lavender;
+}
+
+.notification-group-close-all-button:hover {
+    border: 1px solid @red;
+}
+
+.notification-group-collapse-button:hover > image {
+    color: @lavender
+}
+
+.notification-group-close-all-button:hover > image {
+    color: @red;
+}
+
+.notification.low {
+    border: 1px solid @yellow;
+}
+
+.notification.critical {
+    border: 1px solid @red;
+}
+
+.control-center-list-placeholder {
+    padding: 10px;
+}
+
+.control-center-list-placeholder > image{
+    opacity: 0%;
+}

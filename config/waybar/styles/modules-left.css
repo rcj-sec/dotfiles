@@ -1,0 +1,62 @@
+@define-color workspaces @surface0;
+
+@define-color lang_accent @pink;
+@define-color lang_bg @surface0;
+
+@define-color wksp_accent @mauve;
+
+@define-color mpris_accent @green;
+
+#workspaces {
+    margin-right: 5px;
+    padding: 0px 10px;
+    background-color: @lang_bg;
+    border: 2px solid @wksp_accent;
+    border-radius: 10px;
+}
+
+#workspaces button label{
+    padding: 0px 6px;
+}
+
+#workspaces button.empty label{
+    color: alpha(white, 0.4);
+}
+
+#workspaces button.active label {
+    color: @wksp_accent;
+}
+
+#workspaces button:hover {
+    color: @wksp_accent;
+}
+
+#language {
+    margin: 0px 5px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    border: 2px solid @lang_accent;
+    background-color: @lang_bg;
+}
+
+#language:hover {
+    background-color: @lang_accent;
+    color: @lang_bg;
+}
+ 
+#mpris {
+    margin: 0px 5px;
+    padding: 0px 10px;
+    background-color: @lang_bg;
+    border: 2px solid @mpris_accent;
+    border-radius: 10px;
+}
+
+#mpris.playing {
+    color: @mpris_accent; 
+}
+
+#mpris:hover {
+    background-color: @mpris_accent;
+    color: @lang_bg;
+}

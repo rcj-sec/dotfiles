@@ -1,1 +1,14 @@
-themes/minimal/dmenu-config
+[config]
+stylesheet=dmenu-style.css
+width=500px
+height=100px;
+insensitive=true
+no_actions=true
+parse_action=true
+location=2
+close_on_focus_loss=false
+prompt= 
+print_command=true
+always_parse_args=true
+use_search_box=false
+

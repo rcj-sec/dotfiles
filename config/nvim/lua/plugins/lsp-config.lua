@@ -10,7 +10,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "zls", "clangd", "bashls", "asm_lsp" }
+                ensure_installed = { "lua_ls", "zls", "clangd", "bashls", "asm_lsp", "pyright", "ruff" }
             })
         end,
     },
@@ -18,11 +18,16 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             vim.diagnostic.config({
-                  virtual_text = true, -- enable inline errors
-                  signs = false,
-                  underline = true,
-                  update_in_insert = true,
-                  severity_sort = true,
+                virtual_text = true,
+                signs = true,
+                underline = true,
+                update_in_insert = true,
+                severity_sort = true,
+                float = {
+                    border = 'rounded',
+                    show_header = true,
+                    focusable = false,
+                }
             })
 
             vim.filetype.add({
@@ -52,6 +57,48 @@ return {
                 }
             )
 
+            vim.lsp.config("pyright", {
+                filetypes = { "python" },
+            })
+
+            vim.lsp.config("ruff", {
+                filetypes = { "python" },
+            })
+
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                callback = function(args)
+                    local clients = vim.lsp.get_clients({ bufnr = args.buf })
+
+                    if #clients == 0 then
+                        return
+                    end
+
+                    -- Python: organize imports first
+                    if vim.bo[args.buf].filetype == "python" then
+                        local ruff = vim.lsp.get_clients({
+                            bufnr = args.buf,
+                            name = "ruff",
+                        })
+
+                        if #ruff > 0 then
+                            vim.lsp.buf.code_action({
+                                context = {
+                                    only = { "source.organizeImports" },
+                                    diagnostics = {},
+                                },
+                                apply = true,
+                                bufnr = args.buf,
+                            })
+                        end
+                    end
+
+                    -- Then format with whichever LSP provides formatting
+                    vim.lsp.buf.format({
+                        bufnr = args.buf,
+                        async = false,
+                    })
+                end,
+            })
         end
     }
 }

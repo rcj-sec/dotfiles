@@ -1,1 +1,30 @@
-themes/minimal/dmenu-style.css
+@define-color lavender       #b4befe;
+@define-color base           #1e1e2e;
+@define-color surface2       #585b70;
+
+* {
+    all: initial;
+    font-size: 22px;
+    border-radius: 30px;
+}
+
+window {
+}
+
+#outer-box {
+    padding: 10px;
+}
+
+#input {
+    caret-color: @lavender;
+    background-color: alpha(@base, 1);
+    box-shadow: 0px 0px 10px 0px @base;
+    border: 1px solid @surface2;
+    padding: 10px 10px 10px 20px;
+    margin: 10px;
+    color: white;
+}
+
+#inner-box {
+}
+

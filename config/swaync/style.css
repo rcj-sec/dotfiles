@@ -1,1 +1,20 @@
-themes/minimal/style.css
+* {
+    all: initial;
+}
+
+@import "theme.css";
+
+.control-center {
+}
+
+.widgets {
+    padding: 20px 30px;
+}
+
+.widgets .widget {
+}
+
+@import "style/volume.css";
+@import "style/mpris.css";
+@import "style/title.css";
+@import "style/notifications.css";

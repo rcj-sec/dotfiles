@@ -1,0 +1,87 @@
+@define-color memory @surface0;
+
+#custom-left_div.4 {
+    color: @surface0;
+}
+
+#memory {
+    background-color: @surface0;
+    padding: 0px 7px;
+}
+
+#cpu {
+    padding: 0px 7px;
+}
+
+#network {
+    background-color: @surface0;
+    padding: 0px 7px;
+}
+
+#bluetooth {
+    padding: 0px 7px;
+    color: @accent;
+}
+
+#bluetooth.disabled {
+    color: white;
+}
+
+#bluetooth:hover {
+    color: @accent;
+}
+
+#pulseaudio.audio {
+    background-color: @surface0;
+}
+
+#pulseaudio.audio.muted {
+    color: alpha(white, 0.4);
+}
+
+#pulseaudio.micro {
+    color: @accent;
+}
+
+#pulseaudio.micro.source-muted {
+    color: alpha(white, 0.4);
+}
+
+#pulseaudio:hover, 
+#pulseaudio.audio.muted:hover, 
+#pulseaudio.micro.source-muted:hover { 
+    color: @accent;
+}
+
+#power-profiles-daemon {
+    background-color: @memory;
+    padding: 0px 7px;
+}
+
+#power-profiles-daemon:hover {
+    color: @accent;
+}
+
+#custom-updates {
+    padding: 0px 7px;
+}
+
+#custom-updates:hover {
+    color: @accent;
+}
+
+#custom-notification {
+    background-color: @memory;
+    padding: 0px 10px 0px 7px;
+}
+
+#custom-notification.notification, 
+#custom-notification.dnd-notification, 
+#custom-notification.inhibited-notification,
+#custom-notification.dnd-inhibited-notification {
+    color: @accent;
+}
+
+#custom-notification:hover {
+    color: @accent;
+}

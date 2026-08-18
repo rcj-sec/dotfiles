@@ -1,0 +1,71 @@
+.widget-volume {
+    background-color: alpha(@base, 0.7); 
+    padding: 10px 10px;
+    border: 1px solid @surface2;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px @base;
+}
+
+.widget-volume > box > label {
+    margin-left: 0px;
+}
+
+.widget-volume > box > scale {
+    margin: 0px 5px 0px 7px;
+}
+
+.widget-volume > revealer scale {
+    margin: 0px 33px 0px 5px;
+}
+
+.widget-volume > revealer > list > row {
+    margin-top: 10px;
+}
+
+.widget-volume > box > button {
+    border-radius: 20px;
+    padding: 0px 7px;
+}
+
+.widget-volume > box > button > label {
+    color: @lavender;
+}
+
+.widget-volume > box > button:hover {
+    background-color: alpha(@lavender, 1.0);
+}
+
+.widget-volume > box > button:hover > label {
+    color: @base;
+}
+
+.widget-volume scale trough {
+    background-color: @base;
+    border: 1px solid @lavender;
+    border-radius: 20px;
+    padding: 0px;
+    max-height: 5px;
+    min-height: 5px;
+}
+
+.widget-volume scale trough highlight {
+    border-radius: 20px;
+    max-height: 5px;
+    min-height: 5px;
+    background-color: @lavender;
+}
+
+.widget-volume scale trough slider {
+    background-color: alpha(@surface2, 1);
+    border: 1px solid @lavender;
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    min-width: 17px;
+    max-width: 17px;
+}
+
+.widget-volume scale trough slider:hover {
+    box-shadow: 0px 0px 10px 0px @lavender;
+    background-color: @lavender;
+}

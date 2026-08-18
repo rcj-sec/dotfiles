@@ -1,0 +1,61 @@
+{
+
+    "include": [
+        "~/.config/waybar/modules/*.jsonc"
+    ],
+    
+    "output": "DP-1",
+
+    "modules-left": [
+        "hyprland/workspaces", 
+        "custom/right_inv#1",
+        "hyprland/language",
+        "custom/right_div#1",
+        "mpris",
+        "custom/right_inv#1",
+    ],
+    
+    "modules-center": [
+        "custom/left_div#1",
+        "clock#time",
+        "custom/left_div#2",
+        "custom/left_div#3",
+        "group/session",
+        "custom/right_inv#1",
+        "custom/right_div#1",
+        "clock#date",
+        "custom/right_inv#1",
+    ],
+
+
+    "modules-right": [
+        "battery",
+        "custom/left_div#4",
+        "memory",
+        "custom/left_div#2",
+        "cpu",
+        "custom/left_div#4",
+        "network",
+        "custom/left_div#2",
+        "bluetooth",
+        "custom/left_div#4",
+        "pulseaudio#audio",
+        "custom/left_div#2",
+        "pulseaudio#micro",
+        "custom/left_div#4",
+        "power-profiles-daemon",
+        "custom/left_div#2",
+        "custom/updates",
+        "custom/left_div#4",
+        "custom/notification",
+    ],
+
+    "layer": "top",
+    "height": 0,
+    "width": 0,
+    "margin": 0,
+    "spacing": 0,
+    "mode": "dock",
+    "reload_style_on_change": true
+
+}

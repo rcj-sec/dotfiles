@@ -4,27 +4,14 @@ set -f
 
 export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin"
 
-input=$(wofi --dmenu -c ~/.config/wofi/dmenu-config 2> /dev/null) || exit 1;
+input=$(wofi --show dmenu -c ~/.config/wofi/dmenu-config);
 input=$(printf '%s' "$input" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-[ -z "$input" ] && exit 0
-
-case "$input" in
-  \!*)
-    sh -c "${input#\!}"
-    status=$?
-
-    if [ "$status" -eq 0 ]; then
-        notify-send "Success" "Command exited successfully"
-    else
-        notify-send "Error" "Command failed (exit $status)" -u low
-    fi
-    ;;
-esac
+echo $input
 
 case "$input" in
   *[\;\|\&\>\<\`\$]*)
-    notify-send "Blocked shell syntax" "$input" -u critical
+    notify-send "Blocked shell syntax" "$input" -u critical -a system
     exit 1
     ;;
 esac
@@ -39,5 +26,5 @@ echo Executing "$@"
 status=$?
 
 if [ "$status" -ne 0 ]; then
-    notify-send "Error" "Command failed (exit $status)" -u low -t 3000
+    notify-send "Error" "Command failed (exit $status)" -u low -a system
 fi

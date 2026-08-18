@@ -1,0 +1,81 @@
+.widget-mpris {
+    margin: 10px -10px 0px -10px;
+    padding: 10px;
+}
+
+.widget-mpris > box {
+}
+
+.widget-mpris > box > button {
+    margin: 100px 8px;
+    padding: 5px;
+    background-color: alpha(@base, 0.7);
+    border: 1px solid @surface2;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px @base;
+}
+
+.widget-mpris > box > button:hover {
+    background-color: @lavender;
+}
+
+.widget-mpris > box > button:disabled {
+    opacity: 30%;
+}
+
+.widget-mpris > box > button > image {
+    color: @lavender;
+}
+
+.widget-mpris > box > button:hover > image {
+    color: @base;
+}
+
+carousel {
+    border: 1px solid @surface2;
+    background-color: alpha(@base, 0.9);
+    border-radius: 20px;
+    box-shadow: 0px 0px 7px 0px @base;
+}
+
+.mpris-background {
+    margin: -10px;
+    filter: blur(10px);
+}
+
+.widget-mpris-album-art {
+    -gtk-icon-size: 128px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.widget-mpris-player > .mpris-overlay > box > button {
+    margin-bottom: 10px;
+    padding: 6px;
+    border-radius: 90px;
+}
+
+.widget-mpris-player > .mpris-overlay > box > button:hover {
+    background-color: alpha(@base, 0.9);
+}
+
+.widget-mpris-player > .mpris-overlay > box > button:hover > image {
+    color: @lavender;
+}
+
+.widget-mpris-player > .mpris-overlay > box > button:disabled {
+    opacity: 0%;
+}
+
+.widget-mpris-player > .mpris-overlay > box > button > image {
+    -gtk-icon-size: 14px;
+}
+
+carouselindicatordots {
+    background-color: alpha(@base, 0.4);
+    padding: 0px 20px 0px 15px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+

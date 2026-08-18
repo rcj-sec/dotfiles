@@ -24,14 +24,14 @@ alias ls='ls --group-directories-first --indicator-style=classify'
 
 alias starpreset="$HOME/.config/starship/preset-manager.sh"
 alias find_java_class="$HOME/scripts/find_java_class.sh"
-alias registracker="python3 $HOME/scripts/registracker.py"
-alias cheetah="python3 $HOME/Projects/cheetah/cheetah.py"
 
 alias jd-gui="java -jar $HOME/tools/android/jd-gui.jar"
 alias apktool="java -jar $HOME/tools/android/apktool.jar"
 
 alias vim="nvim"
 alias icat="kitten icat"
+
+alias sheets="$HOME/Projects/sheets/.venv/bin/python $HOME/Projects/sheets/main.py"
 
 export PATH="$PATH:$HOME/Android/Sdk/build-tools/35.0.1"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"

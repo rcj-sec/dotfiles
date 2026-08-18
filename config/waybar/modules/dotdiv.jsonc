@@ -1,0 +1,26 @@
+{
+	"custom/dotsep1": {
+		"format": "•",
+		"tooltip": false
+	},
+	"custom/dotsep2": {
+		"format": "•",
+		"tooltip": false
+	},
+	"custom/dotsep3": {
+		"format": "•",
+		"tooltip": false
+	},
+	"custom/dotsep4": {
+		"format": "•",
+		"tooltip": false
+	},
+	"custom/dotsep5": {
+		"format": "•",
+		"tooltip": false
+	},
+	"custom/dotsep6": {
+		"format": "•",
+		"tooltip": false
+	},
+}

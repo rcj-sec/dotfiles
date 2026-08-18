@@ -1,0 +1,14 @@
+{
+    "bluetooth": {
+        "format-on": "󰂯 {num_connections}",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-connected": "󰂯 {num_connections}",
+        "on-click": "rfkill toggle bluetooth",
+        "tooltip-format-on": "Bluetooth on",
+        "tooltip-format-off": "Bluetooth off",
+        "tooltip-format-disabled": "Bluetooth off",
+        "tooltip-format-connected": "{controller_alias}\n-\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
+    },
+}
