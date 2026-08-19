@@ -1,11 +1,37 @@
 @define-color bg @surface0;
 
+@define-color battery @sapphire;
 @define-color memory @peach;
 @define-color network @blue;
 @define-color pulse @green;
 @define-color pwrprf @red;
 @define-color updates @yellow;
 @define-color notis @mauve;
+
+#battery {
+    border: 2px solid @battery;
+    border-radius: 10px;
+    background-color: @bg;
+    padding: 0px 10px;
+    margin: 0px 5px;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.discharging.warning {
+    color: @peach;
+}
+
+#battery.discharging.critical {
+    color: @red;
+}
+
+#battery:hover {
+    color: @bg;
+    background-color: @battery;
+}
 
 #custom-dotsep1 {
     background-color: @bg;
@@ -105,7 +131,7 @@
     color: alpha(white, 0.4);
 }
 
-#pulseaudio.micro {
+#pulseaudio.source {
     border: 2px solid @pulse;
     border-radius: 10px;
     border-left: transparent;
@@ -116,13 +142,13 @@
     margin-right: 5px;
 }
 
-#pulseaudio.micro.source-muted {
+#pulseaudio.source.source-muted {
     color: alpha(white, 0.4);
 }
 
 #pulseaudio:hover, 
 #pulseaudio.audio.muted:hover, 
-#pulseaudio.micro.source-muted:hover { 
+#pulseaudio.source.source-muted:hover { 
     color: @bg; 
     background-color: @pulse;
 }

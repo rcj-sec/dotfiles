@@ -4,7 +4,7 @@
         "~/.config/waybar/modules/*.jsonc"
     ],
     
-    "output": "DP-1",
+    "output": ["DP-1", "eDP-1"],
 
     "modules-left": [
         "hyprland/workspaces", 
@@ -29,7 +29,7 @@
         "bluetooth",
         "pulseaudio#audio",
         "custom/dotsep3",
-        "pulseaudio#micro",
+        "pulseaudio#source",
         "power-profiles-daemon",
         "custom/updates",
         "custom/notification",

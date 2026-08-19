@@ -2,8 +2,8 @@
     "network": {
         "format-ethernet": "󰈀 {ifname}",
         "format-wifi": "  {signalStrength} %",
-        "format-linked": "󰈀 {ifname}",
-        "format-disconnected": "󰇨 No connection",
+        "format-linked": "󰈀 ",
+        "format-disconnected": "󰇨 ",
         "format-disabled": " Disabled",
         "tooltip-format-ethernet": "{ipaddr}",
         "tooltip-format-wifi": "{essid}",
