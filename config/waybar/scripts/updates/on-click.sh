@@ -14,7 +14,6 @@ if [ -z "$answer" ] || [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
     echo -e "\n[+] Checking pacman packages..."
     echo
     sudo pacman -Syu
-    pkill -RTMIN+8 waybar
     echo 
 fi
 
@@ -31,14 +30,6 @@ fi
 
 echo -e "\n${BLUE_BOLD}[*] PRESS ENTER TO QUIT${RESET}"
 
-CHECK_UDATES_SCRIPT="$HOME/scripts/check-updates.sh"
-sh $CHECK_UDATES_SCRIPT --update-waybar
-
-
-if ! checkupdates | grep -q . && ! aur-check-updates --raw | grep -q .; then
-    HINT_UPDATES="string:x-canonical-private-synchronous:updates"
-    TITLE="System up to date!"
-    notify-send --hint="$HINT_UPDATES" "$TITLE" -i system -a System
-fi
+pkill -RTMIN+8 waybar
 
 read quit

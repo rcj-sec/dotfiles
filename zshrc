@@ -31,7 +31,7 @@ alias apktool="java -jar $HOME/tools/android/apktool.jar"
 alias vim="nvim"
 alias icat="kitten icat"
 
-alias sheets="$HOME/Projects/sheets/.venv/bin/python $HOME/Projects/sheets/main.py"
+alias sheets="$HOME/Projects/cheatsheet-manager/.venv/bin/python $HOME/Projects/cheatsheet-manager/main.py"
 
 export PATH="$PATH:$HOME/Android/Sdk/build-tools/35.0.1"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"

@@ -123,12 +123,8 @@
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     background-color: @bg;
-    padding: 0px 5px 0px 10px;
+    padding: 0px 10px;
     margin-left: 5px;
-}
-
-#pulseaudio.audio.muted {
-    color: alpha(white, 0.4);
 }
 
 #pulseaudio.source {
@@ -138,12 +134,8 @@
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     background-color: @bg;
-    padding: 0px 10px 0px 5px;
+    padding: 0px 10px;
     margin-right: 5px;
-}
-
-#pulseaudio.source.source-muted {
-    color: alpha(white, 0.4);
 }
 
 #pulseaudio:hover, 

@@ -1,0 +1,7 @@
+{ 
+    "custom/test": {
+        "exec": "notify-send 'EXEC RAN'; echo 'TEST'",
+        "interval": "once",
+        "on-click": "true",
+    } 
+}

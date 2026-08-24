@@ -1,7 +1,7 @@
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+    name           = "suppress-maximize-events",
+    match          = { class = ".*" },
 
     suppress_event = "maximize",
 })
@@ -9,8 +9,8 @@ local suppressMaximizeRule = hl.window_rule({
 
 hl.window_rule({
     -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
+    name     = "fix-xwayland-drags",
+    match    = {
         class      = "^$",
         title      = "^$",
         xwayland   = true,
@@ -44,5 +44,14 @@ hl.window_rule({
     match = {
         class = "^(Spotify)$"
     },
-    workspace = 5
+    workspace = "special:spotify"
+})
+
+hl.window_rule({
+    match = {
+        workspace = "s[true]",
+    },
+    border_color = "rgb(94e2d5)",
+    border_size = 2,
+    opacity = 0.8
 })

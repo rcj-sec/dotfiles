@@ -25,6 +25,6 @@ hl.gesture({
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -1,
+    name        = "pnp0c50:0b-0911:5288-touchpad",
+    sensitivity = 0.5,
 })

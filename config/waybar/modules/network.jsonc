@@ -1,12 +1,12 @@
 {
     "network": {
-        "format-ethernet": "󰈀 {ifname}",
-        "format-wifi": "  {signalStrength} %",
+        "format-ethernet": "󰈀 ",
+        "format-wifi": "{essid}",
         "format-linked": "󰈀 ",
         "format-disconnected": "󰇨 ",
         "format-disabled": " Disabled",
         "tooltip-format-ethernet": "{ipaddr}",
-        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-wifi": "{signalStrength} %",
         "tooltip-format-disconnected": "No network connected",
         "tooltip-format-disabled": "Check rfkill."
     }

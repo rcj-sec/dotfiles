@@ -9,6 +9,7 @@
     "modules-left": [
         "hyprland/workspaces", 
         "hyprland/language",
+        "custom/updates",
         "mpris",
     ],
     
@@ -31,7 +32,6 @@
         "custom/dotsep3",
         "pulseaudio#source",
         "power-profiles-daemon",
-        "custom/updates",
         "custom/notification",
     ],
 

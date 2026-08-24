@@ -1,27 +1,24 @@
 {
     "pulseaudio#audio": {
-        "format": "{icon} {volume}",
-        "format-muted": " ",
+        "format": " {volume}",
+        "format-muted": "",
         "tooltip": true, 
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "swaync-client -op",
-        "format-icons": {
-            "default": ["", " ", " "],
-        }, 
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1", 
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- -l 1",
-        "min-length": 8,
-        "max-length": 8
+        "min-length": 3,
+        "max-length": 7
     },
 
     "pulseaudio#source": {
         "format": "{format_source}",
-        "format-source": " {source_volume}",
-        "format-source-muted":  " ",
+        "format-source": " {volume}",
+        "format-source-muted": " ",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.02+ -l 1", 
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.02- -l 1",
-        "min-length": 8,
-        "max-length": 8
+        "min-length": 3,
+        "max-length": 7
     },
 }

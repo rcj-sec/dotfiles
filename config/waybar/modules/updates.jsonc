@@ -1,10 +1,10 @@
 {
     "custom/updates": {
-        "format": "{}",
-        "exec": "cat $HOME/.cache/updates",
+        "format": "{text}",
+        "interval": "once",
         "return-type": "json",
+        "exec": "sh ~/.config/waybar/scripts/updates/exec.sh",
         "signal": 8,
-        "on-click": "kitty -e $HOME/.config/waybar/scripts/updates/on-click.sh",
-        "on-click-right": "sh $HOME/scripts/check-updates.sh --update-waybar --notify"
+        "on-click": "kitty -e sh ~/.config/waybar/scripts/updates/on-click.sh",
     },
 }
